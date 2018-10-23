@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i");
+.nav-links, .nav-links-li__link, .list {
+  text-decoration: none;
+  list-style-type: none; }
+
+.nav, .sectionProducts__header, .sectionProducts__text, .horRow, .list, .formSub__header, .formSub__text, .formSub-wrap {
+  margin-left: auto;
+  margin-right: auto; }
+
+html {
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif; }
+
+body {
+  box-sizing: border-box;
+  color: #737373;
+  width: 100vw;
+  overflow-x: hidden;
+  line-height: 1.7rem;
+  background: #e0e0e0;
+  margin: 0; }
+
+.contentWrapper {
+  max-width: 1250px;
+  margin: 0 auto; }
+
+.container_no-pad {
+  padding-left: 0;
+  padding-right: 0; }
+
+.nav-links, .nav-links-li__link, .list {
+  text-decoration: none;
+  list-style-type: none; }
+
+.nav, .sectionProducts__header, .sectionProducts__text, .horRow, .list, .formSub__header, .formSub__text, .formSub-wrap {
+  margin-left: auto;
+  margin-right: auto; }
+
+.nav {
+  background: #313030;
+  max-width: 1250px;
+  height: 90px;
+  font-size: .875rem;
+  font-weight: bold;
+  margin-bottom: 113px;
+  margin-top: 30px; }
+
+.nav-links {
+  height: inherit;
+  margin-left: 28.56%;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 483px;
+  display: flex;
+  padding-left: 0; }
+
+.nav-links-li {
+  height: inherit; }
+
+.nav-links-li__link {
+  display: inline-block;
+  height: inherit;
+  color: #e0e0e0; }
+
+.nav-links-li__linkText {
+  display: block;
+  padding-top: 0;
+  margin-top: 33px;
+  text-align: center; }
+
+.nav-links-li__linkText1 {
+  width: 90px; }
+
+.nav-links-li__linkText2 {
+  width: 165px; }
+
+.nav-links-li__linkText3 {
+  width: 87px; }
+
+.nav-links-li__linkText4 {
+  width: 165px; }
+
+.link_active {
+  background: #ff3f40; }
+
+.section {
+  margin: 0 auto;
+  display: flex;
+  margin-bottom: 85px; }
+
+.sectionContacts {
+  display: flex;
+  justify-content: space-between; }
+
+.sectionContacts-content {
+  width: 48.72%; }
+
+.headerBig {
+  font-size: 3.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-left: -3px;
+  margin-top: 0;
+  margin-bottom: 45px;
+  color: #000000; }
+
+.sectionContacts-content__header2 {
+  letter-spacing: 7px;
+  margin-bottom: 40px; }
+
+.textDesc {
+  margin-bottom: 52px;
+  width: 80%;
+  color: #6f6d6d; }
+
+.button {
+  width: 226px;
+  height: 55px;
+  border-radius: 7px;
+  background: #ff3f40;
+  border-width: 0;
+  font-size: 1.13rem;
+  font-weight: bold;
+  color: white; }
+
+.sectionContacts-content-figure {
+  margin-right: 0;
+  margin-top: -10px;
+  margin-left: auto; }
+
+.pageBackColor2 {
+  background: #ffffff; }
+
+.sectionOffers-wrap1 {
+  padding-left: 0; }
+
+.sectionOffers {
+  margin-top: 100px;
+  margin-bottom: 70px; }
+
+.headerMid {
+  font-size: 2.6rem;
+  line-height: 3.5rem;
+  font-weight: bold;
+  color: #585858;
+  margin-bottom: 34px;
+  margin-top: 0; }
+
+.sectionOffers-wrap1__text {
+  width: 100%; }
+
+.sectionOffers-wrap1__button {
+  background: white;
+  color: #ff3f40;
+  border-radius: 7px;
+  border: 2px solid #ff3f40; }
+
+.sectionOffers-wrap2 {
+  margin-top: 10px; }
+
+.sectionOffers-wrap2__headerLit {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 15px;
+  margin-bottom: 12px; }
+
+.text {
+  line-height: 1.8rem;
+  margin-top: 0; }
+
+.sectionProducts {
+  flex-flow: column;
+  padding-top: 88px;
+  border-top: 2px solid #ececec;
+  margin-bottom: 53px; }
+
+.sectionProducts__header {
+  margin-bottom: 20px; }
+
+.sectionProducts__text {
+  width: 38%;
+  text-align: center; }
+
+.horRow {
+  width: 10.8%;
+  background: #ff3f40;
+  height: 3px; }
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 72%;
+  padding-left: 0;
+  margin-top: 30px;
+  margin-bottom: 35px; }
+
+.list__item {
+  color: #737373;
+  font-size: 1.375rem;
+  font-weight: bolder;
+  margin-top: 65px; }
+
+.list__item_active {
+  color: #ff3f40; }
+
+.figure {
+  margin-left: 0;
+  margin-right: 0; }
+
+.sectionTeam {
+  display: block; }
+
+.sectionTeam-member__header {
+  margin-bottom: 20px; }
+
+.sectionTeam-member__text {
+  width: 40%; }
+
+.sectionTeam-member__hr {
+  margin-left: 0;
+  margin-bottom: 70px; }
+
+.sectionTeam-member__figure {
+  margin-top: 0; }
+
+.sectionTeam-wrapMembers {
+  display: flex; }
+
+.sectionTeam-wrapMembers-desc {
+  margin-left: 70px; }
+
+.sectionTeam-wrapMembers-desc__header {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 25px; }
+
+.sectionTeam-wrapMembers-desc__text {
+  width: 62%;
+  margin-bottom: 8px; }
+
+.sectionTeam-wrapMembers-desc-socNet {
+  margin-top: 11px;
+  width: 375px;
+  margin-left: 0;
+  font-style: italic;
+  font-weight: normal;
+  margin-bottom: 45px; }
+
+.sectionTeam-wrapMembers-desc-figWrap {
+  justify-content: space-between; }
+
+.photosMems {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 0; }
+
+.Image {
+  width: 100%;
+  height: 100%; }
+
+.figureWrap {
+  display: flex; }
+
+.formSub {
+  background-image: url(imgCss/formSubBack.jpg);
+  /* background:green; */
+  /* background-position: center; */
+  /*     background-repeat: no-repeat;*/
+  /* background-size:100%,100%; */
+  height: 512px; }
+
+.formSub__header {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 130px;
+  font-size: 2.625rem;
+  margin-bottom: 46px; }
+
+.formSub__text {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.625rem;
+  margin-bottom: 70px; }
+
+.formSub-wrap {
+  width: 48.7%;
+  display: flex;
+  justify-content: space-between; }
+
+.formSub-wrap__inputSubUser {
+  width: 69%;
+  height: 80px;
+  border-radius: 7px;
+  border-width: 0;
+  font-size: 1.2rem;
+  text-indent: 8%;
+  font-family: "Open Sans", sans-serif; }
+  .formSub-wrap__inputSubUser::placeholder {
+    font-size: 1.2rem;
+    text-indent: 8%;
+    color: #e0e0e0;
+    font-family: "Open Sans", sans-serif; }
+
+.formSub-wrap__btnSubUser {
+  width: 28%;
+  height: 80px; }
+
+/*# sourceMappingURL=main.css.map */
