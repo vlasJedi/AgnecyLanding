@@ -1,6 +1,6 @@
 
-@import "constants"; // COLORS
-@import "short"; // MIXIN etc..
+@import "constants.scss"; // COLORS
+@import "short.scss"; // MIXIN etc..
 .nav {
 		background:$colorNavBack;
 		max-width:$maxw;

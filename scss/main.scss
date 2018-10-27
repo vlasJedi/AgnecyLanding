@@ -1,6 +1,6 @@
 
-@import "constants"; // COLORS
-@import "short"; // MIXIN etc..
+@import "constants.scss"; // COLORS
+@import "short.scss"; // MIXIN etc..
 html {
 	font-size:16px;
 	font-family:$fontfam;}
@@ -27,8 +27,10 @@ body {
 
 .section {
 	margin:0 auto;
+	padding-left:15px;
 	display:flex;
 	margin-bottom:85px;
+	max-width:1250px;
 }
 .sectionContacts {
 	display:flex;
@@ -162,11 +164,14 @@ body {
 .sectionTeam {
 	display:block;
 }
+.wrapperWidth {
+	width:58%;
+}
 .sectionTeam-member__header {
 	margin-bottom:20px;
 }
 .sectionTeam-member__text {
-	width:40%;
+	margin-bottom:25px;
 }
 .sectionTeam-member__hr {
 	margin-left:0;
@@ -228,7 +233,7 @@ body {
 	@extend %cen;
 	margin-top:130px;
 	font-size:2.625rem;
-	margin-bottom:46px;
+	margin-bottom:25px;
 }
 .formSub__text {
 	color:$colorBack2;
@@ -243,7 +248,7 @@ body {
 	justify-content:space-between;
 
 }
-.formSub-wrap__inputSubUser {
+.input {
 	width:69%;
 	height:80px;
 	border-radius:7px;
@@ -253,13 +258,79 @@ body {
 	font-family:$fontfam;
 	&::placeholder {
 		font-size:1.2rem;
-		text-indent:8%;
+		text-indent:50px;
 		color:$colorBack1;
 		font-family:$fontfam;
 	}
 }
 .formSub-wrap__btnSubUser {
 	width:28%;
-	height:80px;
+	height:80px; }
 
+.sectionConnect {
+	margin-top:105px;
+	display:block;
 }
+.sectionConnect-wrap {
+}
+.sectionConnect-wrap2 {
+	display:flex;
+	flex-wrap:wrap;
+	height:485px;
+}
+.sectionConnect-wrap__header {
+	margin-bottom:20px;
+}
+.sectionConnect-wrap__text {
+	margin-bottom:25px;
+}
+.sectionConnect-wrap__hr {
+	margin-left:0;
+	margin-bottom:70px;
+}
+.sectionConnect-wrap2-form-inputs {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:space-between;
+}
+.inputConnect {
+	height:70px;
+	width:340px;
+	background:$colorBack1;
+	text-indent:12%;
+	flex-basis:320px;
+	&::placeholder {
+		font-size:1.2rem;
+		text-indent:50px;
+		color:$colorMainText;
+		font-family:$fontfam;
+	}
+}
+.sectionConnect-wrap2__inputMsg {
+	margin-top:50px;
+	width:100%;
+	height:250px;
+}
+.sectionConnect-wrap__button {
+	width:100%;
+	height:70px;
+	margin-top:45px;
+}
+.sectionConnect-wrap2-ContactInfo {
+	width:412px;
+	heigth:310px;
+	background:$colorContactInfoBack;
+.sectionConnect-wrap2-ContactInfo-content {
+	margin-left:75px;
+	margin-top:140px;
+}
+}
+.sectionConnect-wrap2-ContactInfo-content__header {
+	font-size:1.125rem;
+	color:$colorContactInfoHeader;
+}
+
+
+
+
+
