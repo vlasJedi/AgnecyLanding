@@ -1,0 +1,12 @@
+.link {
+	display:flex;
+	align-items:center;
+	height:100%;
+	@extend %no-decor;
+	color:$Back1;
+	}
+.link__cap {
+	text-align:center;
+	width:100%;
+	text-transform:uppercase;
+}

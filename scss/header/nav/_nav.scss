@@ -1,0 +1,22 @@
+@import "link/_link.scss";
+@import "link/_link_mods.scss";
+.nav {
+		@extend %no-decor;
+		display:flex;
+		padding-left:15px;
+		padding-right:15px;
+		
+}
+.nav_ {
+		margin-left:357/$maxW*100%;
+		margin-top:0;
+		margin-bottom:0;
+		height:100%;
+		width:483px;;
+}
+.nav__item {
+		height:100%;
+}
+
+
+

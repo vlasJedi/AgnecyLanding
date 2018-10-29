@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700,700i");
+.l-header {
+  margin-left: auto;
+  margin-right: auto; }
+
+.header {
+  background: #313030;
+  font-size: .875rem;
+  font-weight: bold;
+  max-width: 1250px;
+  height: 90px; }
+
+.l-header {
+  margin-bottom: 113px;
+  margin-top: 30px; }
