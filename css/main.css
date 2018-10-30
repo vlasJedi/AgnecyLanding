@@ -458,6 +458,10 @@ body {
       margin-right: auto;
       text-align: center; } }
 
+.offers__icon {
+  font-size: 35px;
+  color: #ff3f40; }
+
 .team__horRow {
   margin-left: 0;
   margin-bottom: 70px; }
