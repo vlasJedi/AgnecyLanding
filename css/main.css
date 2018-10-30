@@ -20,7 +20,7 @@ body {
   overflow-x: hidden;
   line-height: 1.8;
   background: #e0e0e0;
-  margin: 0; }
+  margin: 0 auto; }
 
 .contentWrapper {
   max-width: 1250px;
@@ -97,6 +97,7 @@ body {
   margin-bottom: 113px;
   margin-top: 30px;
   height: 90px;
+  width: 100%;
   max-width: 1250px; }
 
 .sect {
@@ -107,8 +108,8 @@ body {
   margin: 0 auto; }
   @media (max-width: 1250px) {
     .sect {
-      padding-left: 15px;
-      padding-right: 15px; } }
+      padding-left: 15px !important;
+      padding-right: 15px !important; } }
 
 .sect__contacts {
   justify-content: space-between;
