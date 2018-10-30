@@ -60,7 +60,7 @@ body {
 	}
 }
 
-.sect_contacts {
+.sect__contacts {
 	justify-content:space-between;
 	margin-bottom:85px;
 }
@@ -91,6 +91,9 @@ body {
 		margin-right: auto;
 		text-align: center;
 	}
+	@media (max-width:580px) {
+		font-size:2.3rem;
+	}
 }
 .contacts__headBig_2 {
 	letter-spacing:7px;
@@ -100,6 +103,10 @@ body {
 		margin-left:auto;
 		margin-right: auto;
 		text-align: center;
+	}
+	@media (max-width:580px) {
+		font-size:2.3rem;
+		letter-spacing:4px;
 	}
 }
 .par {
@@ -210,6 +217,9 @@ body {
 	line-height:$lineHeadMid;
 	font-weight:bold;
 	text-transform:uppercase;
+	@media (max-width:580px) {
+		font-size:2rem;
+	}
 }
 .offers__headMid {
 	margin-bottom:34px;
@@ -248,6 +258,9 @@ body {
 .headLit {
 	font-size:1.5rem;
 	font-weight:600;
+	@media (max-width:580px) {
+		font-size:1.2rem;
+	}
 }
 .offers__headLit {
 	margin-top:15px;
@@ -259,7 +272,7 @@ body {
 .mr0 {
 	margin-right: 0;
 }
-.section-products {
+.section__products {
 	display: block;
 	padding-top:88px;
 	border-top:2px solid $SectionBorder;
@@ -322,7 +335,7 @@ body {
 	margin-bottom: 8px;
 }
 
-.section-team {
+.section__team {
 	display:block;
 }
 .wrapper_w {
@@ -483,6 +496,13 @@ body {
 		margin-right:auto;
 		margin-bottom: 20px;
 	}
+	@media (max-width:450px) {
+		height:70px;
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 20px;
+	}
 }
 .formSub__btn {
 	width:215px;
@@ -490,7 +510,7 @@ body {
 	text-transform:uppercase;
 	margin-left: auto; 
 }
-.section-connect {
+.section__connect {
 	margin-top:105px;
 	display:block;
 	margin-bottom: 150px;
@@ -512,6 +532,11 @@ body {
 	@media (max-width:1050px) {
 		margin-left: auto;
 		margin-right: auto;
+	}
+	@media (max-width:800px) {
+		margin-left: auto;
+		margin-right: auto;
+		width:80%;
 	}
 }
 .connect__headMid {
@@ -628,6 +653,9 @@ body {
 	z-index:2;
 	width:100%;
 	opacity:.9;
+	@media (max-width:550px) {
+		height:70px;
+	}
 }
 .content__align {
 	height:100%;
@@ -648,7 +676,7 @@ body {
 	@media (max-width:550px) {
 		margin-left: auto;
 		margin-right:auto;
-		margin-top: 10px;
+		margin-top: 5px;
 		padding-left: 0;
 	}
 }
@@ -657,7 +685,7 @@ body {
 		margin-left: auto;
 		margin-right:auto;
 		margin-bottom: 0;
-		margin-top: 10px;
+		margin-top: 5px;
 	}
 }
 .list-hor-const__item {
