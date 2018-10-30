@@ -5,6 +5,7 @@
 		display:flex;
 		padding-left:15px;
 		padding-right:15px;
+
 		
 }
 .nav_ {
@@ -12,7 +13,14 @@
 		margin-top:0;
 		margin-bottom:0;
 		height:100%;
-		width:483px;;
+		width:483px;
+		@media (max-width:880px) {
+			margin-left: auto;
+			margin-right: auto;
+	}
+		@media (max-width:600px) {
+			display:none;
+		}
 }
 .nav__item {
 		height:100%;
