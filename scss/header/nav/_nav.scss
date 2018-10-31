@@ -1,5 +1,4 @@
-@import "link/_link.scss";
-@import "link/_link_mods.scss";
+
 .nav {
 		@extend %no-decor;
 		display:flex;
@@ -8,23 +7,8 @@
 
 		
 }
-.nav_ {
-		margin-left:357/$maxW*100%;
-		margin-top:0;
-		margin-bottom:0;
-		height:100%;
-		width:483px;
-		@media (max-width:880px) {
-			margin-left: auto;
-			margin-right: auto;
-	}
-		@media (max-width:600px) {
-			display:none;
-		}
-}
-.nav__item {
-		height:100%;
-}
+
+
 
 
 

@@ -1,0 +1,21 @@
+<footer class="footer">
+	<div class="content__align">
+		<p class="footer__rights">
+			<code> &#169;</code>Copyright@2018. All rights reserved.
+		</p>
+		<ul class="list list-social">
+			<li class="list-hor-const__item">
+				<i class="fab fa-google-plus fas__"></i>
+			</li>
+			<li class="list-hor-const__item">
+				<i class="fab fa-twitter fas__"></i>
+			</li>
+			<li class="list-hor-const__item">
+				<i class="fab fa-facebook-f fas__"></i>
+			</li>
+			<li class="list-hor-const__item">
+				<i class="fab fa-linkedin-in fas__"></i>
+			</li>
+		</ul>
+	</div>
+</footer>

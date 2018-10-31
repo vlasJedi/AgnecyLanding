@@ -1,0 +1,28 @@
+.section__products {
+	display: block;
+	padding-top:88px;
+	border-top:2px solid $SectionBorder;
+	margin-bottom:53px;
+}
+.products__headMid {
+	@extend %cen;
+	margin-top: 0;
+	margin-bottom:20px;
+	text-align:center;
+}
+.products__par {
+	min-width:280px;
+	width:38%;
+	@extend %cen;
+	text-align:center;
+}
+.products__list {
+	padding-left:0;
+	margin-top:60px;
+	margin-bottom:35px;
+}
+.products__figure {
+	width:300px;
+	height:300px;
+
+}

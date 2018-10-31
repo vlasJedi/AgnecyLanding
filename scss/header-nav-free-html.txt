@@ -1,0 +1,32 @@
+<header class="header header_"> <!-- BLOCK -->
+			<ul class="nav nav_">
+				<li class="nav__item">
+					<a class="link link_1 js-link_active" href="#">
+						<div class="link__cap">
+							home
+						</div>
+					</a>
+				</li>
+				<li class="nav__item">
+					<a class="link link_2" href="#">
+						<div class="link__cap">
+							portfolio
+						</div>
+					</a>
+				</li>
+				<li class="nav__item">
+					<a class="link link_3" href="#">
+						<div class="link__cap">
+							about us
+						</div>
+					</a>
+				</li>
+				<li class="nav__item">
+					<a class="link link_4" href="#">
+						<div class="link__cap">
+							contact
+						</div>
+					</a>
+				</li>
+			</ul>
+		</header> 
