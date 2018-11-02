@@ -27,7 +27,7 @@
 	@extend %cen;
 	text-align:center;
 	font-size:1.625rem;
-	margin-bottom:70px;
+	margin-bottom:80px;
 	@media (max-width:1000px) {
 		margin-bottom:20px;
 		font-size:1.4rem;
@@ -38,10 +38,13 @@
 
 }
 .formSub-wrap {
-	max-width:800px;
+	max-width:850px;
+	height: 250px;
 	@extend %cen;
 	display:flex;
 	flex-wrap:wrap;
+	position: relative;
+	align-items: center;
 	@media (max-width:1000px) {
 		flex-flow:column;
 	}
@@ -54,19 +57,21 @@
 	@media (max-width:1000px) {
 		margin-left:auto;
 		margin-right:auto;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
+		height:70px;
 	}
 	@media (max-width:450px) {
-		height:70px;
 		width:80%;
-		margin-left:auto;
-		margin-right:auto;
-		margin-bottom: 20px;
+		height: 60px;
 	}
 }
 .formSub__btn {
 	width:215px;
-	height:80px;
+	height:70px;
+	margin-bottom: 65px;
 	text-transform:uppercase;
-	margin-left: auto; 
+	margin-left: auto;
+	@media (max-width:450px) {
+		height: 60px;
+	}
 }

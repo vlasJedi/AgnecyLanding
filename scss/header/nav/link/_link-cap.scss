@@ -2,4 +2,7 @@
 	text-align:center;
 	width:100%;
 	text-transform:uppercase;
+	border-bottom:2px solid transparent;
+	&:active {
+	}
 }

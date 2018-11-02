@@ -1,6 +1,42 @@
 
 .header {
-		background:$NavBack;
-		font-size:.875rem;
-		font-weight:bold;
+	background: $NavBack;
+	font-size: .875rem;
+	font-weight: bold;
 		@extend %cen;}
+.bigmac {
+	margin-top: 30px;
+	float: right;
+	margin-right: 11px;
+	display: none;
+	background: white;
+	width: 54px;
+	height: 29px;
+	@media (max-width:600px) {
+		display: inline-block;
+	}
+}
+.bigmac__inner {
+	background: black;
+	height: 3px;
+	margin-top: 5px;
+}
+.wrap__flex-nav {
+	display: block;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-left: 357/$maxW*100%;
+	@media (max-width: 1000px) {
+		margin-left: 200/$maxW*100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	@media (max-width: 830px) {
+		margin-right: auto;
+		margin-left: auto;
+		}
+	@media (max-width: 600px) {
+		display: none;
+	}
+}

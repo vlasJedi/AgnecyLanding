@@ -1,3 +1,9 @@
+.parallax {
+	background-image: url("../img/back/parallax_2.jpeg");
+	background-attachment: fixed;
+	@extend %cen;
+	border:1px solid transparent;
+}
 .sect__contacts {
 	justify-content:space-between;
 	margin-bottom:85px;
@@ -8,6 +14,9 @@
 		margin-left:auto;
 		margin-right: auto;
 	}
+}
+.section-contacts {
+	border:1px solid transparent;
 }
 .contacts__headBig_1 {
 	margin-left:-3px;
@@ -47,7 +56,7 @@
 .contacts__par {
 	width:80%;
 	margin-top:0;
-	margin-bottom:47px;
+	margin-bottom:20px;
 	@media (max-width:1000px) {
 		margin-left:auto;
 		margin-right: auto;
@@ -58,8 +67,32 @@
 	flex-basis:360px;
 	width:470/$maxW*100%;
 	max-width:470px;
+	align-self: flex-end;
 	@media (max-width:1000px) {
 		margin-left:auto;
 		margin-right: auto;
 	}
+}
+.fig-cap {
+	position:absolute;
+	bottom:0;
+	width:100%;
+	height:100%;
+	opacity:0;
+	display:flex;
+	justify-content: center;
+	&:hover {
+		opacity:1;
+		background-color:rgba(70,70,70,.6);
+		transition:opacity 0.5s ease-out;
+	}
+}
+.fig__cap {
+	align-self: flex-end;
+	text-align:center;
+	color:red;
+	font-size:1.4rem;
+	font-weight: 700;
+	height:80px;
+	text-shadow:3px 3px 12px black;
 }

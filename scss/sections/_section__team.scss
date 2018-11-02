@@ -52,10 +52,10 @@
 .members__fig {
 	width: 200px;
 	height: 200px;
-	margin-bottom: 0;
 	@media (max-width:1250px) {
 		margin-left:auto;
 		margin-right:auto;
+		margin-bottom:20px;
 	}
 }
 .members__headLit {
