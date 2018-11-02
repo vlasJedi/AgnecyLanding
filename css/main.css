@@ -657,7 +657,7 @@ body {
   color: #ffffff;
   text-align: center;
   font-size: 1.625rem;
-  margin-bottom: 80px; }
+  margin-bottom: 50px; }
   @media (max-width: 1000px) {
     .formSub__par {
       margin-bottom: 20px;
