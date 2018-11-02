@@ -535,7 +535,7 @@ body {
       width: 90%; } }
 
 .parallax {
-  background-image: url(imgCss/parallax_2.jpeg);
+  background-image: url(../img/back/parallax_2.jpeg);
   background-attachment: fixed;
   border: 1px solid transparent; }
 
