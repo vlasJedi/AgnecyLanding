@@ -537,6 +537,7 @@ body {
 .parallax {
   background-image: url(../img/back/parallax_2.jpeg);
   background-attachment: fixed;
+  background-repeat: none;
   border: 1px solid transparent; }
 
 .sect__contacts {
