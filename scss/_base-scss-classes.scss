@@ -14,6 +14,14 @@
 	20% {transform: translateY(32px)}
 	100% {transform: translateY(32px)}
 }
+@keyframes borders{
+	0% {background-position: 0 0}
+	100% {background-position: 0 -180px}
+}
+@keyframes parallax-switch {
+	0% {opacity: 0}
+	100% {opacity: 1}
+}
 .headBig {
 	font-size:3.75rem;
 	font-weight:900;

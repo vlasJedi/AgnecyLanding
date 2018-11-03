@@ -3,7 +3,7 @@
   text-decoration: none;
   list-style-type: none; }
 
-.horRow, .list-flex, .header, .products__headMid, .products__par, .parallax, .formSub__head, .formSub__par, .formSub-wrap, .content__align {
+.horRow, .list-flex, .header, .products__headMid, .products__par, .parallax_1, .parallax_2, .formSub__head, .formSub__par, .formSub-wrap, .content__align {
   margin-left: auto;
   margin-right: auto; }
 
@@ -94,6 +94,18 @@ body {
     transform: translateY(32px); }
   100% {
     transform: translateY(32px); } }
+
+@keyframes borders {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 0 -180px; } }
+
+@keyframes parallax-switch {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 .headBig {
   font-size: 3.75rem;
@@ -284,7 +296,8 @@ body {
 .header {
   background: #313030;
   font-size: .875rem;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-top: 15px; }
 
 .bigmac {
   margin-top: 30px;
@@ -324,7 +337,7 @@ body {
 
 .header_ {
   margin-bottom: 90px;
-  margin-top: 20px;
+  padding-top: 20px;
   height: 90px;
   width: 100%;
   max-width: 1250px; }
@@ -534,11 +547,47 @@ body {
       margin-right: auto;
       width: 90%; } }
 
-.parallax {
+.parall {
+  position: relative;
+  height: 650px; }
+
+.parallax_1 {
   background-image: url(../img/back/parallax_2.jpg);
   background-attachment: fixed;
   background-repeat: none;
-  border: 1px solid transparent; }
+  background-clip: padding-box;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  animation: parallax-switch 5s ease-in-out 0s infinite alternate; }
+
+.parallax_2 {
+  background-image: url(../img/back/parallax_1.jpg);
+  background-attachment: fixed;
+  background-repeat: none;
+  background-clip: border-box;
+  border: 1px solid transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0; }
+
+.header-wrap {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  left: 143px;
+  top: 15px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 4; }
 
 .sect__contacts {
   justify-content: space-between;
@@ -554,18 +603,59 @@ body {
 .section-contacts {
   border: 1px solid transparent; }
 
-.contacts__headBig_1 {
+.covers {
   margin-left: -3px;
   margin-top: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  position: relative;
+  background-clip: border-box;
+  background-image: linear-gradient(to top, white, black);
+  border: 5px solid transparent;
+  background-origin: border-box;
+  background-repeat: repeat-y;
+  background-position: 0 0;
+  /* width:500px; */
+  height: 91px;
+  border-radius: 8px;
+  animation: borders 20s linear 0s infinite; }
+  @media (max-width: 1000px) {
+    .covers {
+      margin-left: auto;
+      margin-right: auto; } }
+  @media (max-width: 580px) {
+    .covers {
+      height: 60px; } }
+
+.contacts__headBig_1 {
+  margin-top: 0;
+  margin-bottom: 0;
+  position: absolute;
+  height: 90px;
+  left: -5px;
+  right: -5px;
+  top: -5px;
+  bottom: -5px;
+  border: 5px solid transparent;
+  background-color: #cccccc;
+  background-clip: padding-box;
+  border-radius: 8px;
+  /* border-image-source:linear-gradient(to top,black ,white);
+	border-image-slice:6;
+	border-radius:15px; */
+  /* &::before,&::after {
+		content: linear-gradient(to top,black ,white);
+		display: inline-block;
+		width:20px;
+		height:30px;
+	} */
+  /* border-left-color: linear-gradient(to left,black ,white); */ }
   @media (max-width: 1000px) {
     .contacts__headBig_1 {
-      margin-left: auto;
-      margin-right: auto;
       text-align: center; } }
   @media (max-width: 580px) {
     .contacts__headBig_1 {
-      font-size: 2.3rem; } }
+      font-size: 2.3rem;
+      height: 60px; } }
   @media (max-width: 330px) {
     .contacts__headBig_1 {
       font-size: 2rem;
@@ -592,7 +682,10 @@ body {
 .contacts__par {
   width: 80%;
   margin-top: 0;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: 600;
+  text-shadow: 5px -4px 20px #fff; }
   @media (max-width: 1000px) {
     .contacts__par {
       margin-left: auto;

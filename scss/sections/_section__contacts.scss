@@ -1,9 +1,46 @@
-.parallax {
+.parall {
+	position: relative;
+	height:650px;
+}
+.parallax_1 {
 	background-image: url(../img/back/parallax_2.jpg);
 	background-attachment: fixed;
 	background-repeat:none;
+	background-clip: padding-box;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	top:0;
+	left: 0;
+	opacity: 0;
+	z-index:2;
+	animation: parallax-switch 5s ease-in-out 0s infinite alternate;
 	@extend %cen;
+}
+.parallax_2 {
+	background-image: url(../img/back/parallax_1.jpg);
+	background-attachment: fixed;
+	background-repeat:none;
+	background-clip: border-box;
 	border:1px solid transparent;
+	position: absolute;
+	width:100%;
+	height: 100%;
+	@extend %cen;
+	top:0;
+	left: 0;
+}
+.header-wrap {
+	max-width: 1250px;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	left:143px;
+	top:15px;
+	width:100%;
+	height: 100%;
+	background-color: transparent;
+	z-index: 4;
 }
 .sect__contacts {
 	justify-content:space-between;
@@ -19,17 +56,61 @@
 .section-contacts {
 	border:1px solid transparent;
 }
-.contacts__headBig_1 {
+.covers {
 	margin-left:-3px;
 	margin-top:0;
 	margin-bottom:0;
+	position: relative;
+	background-clip: border-box;
+	background-image:linear-gradient(to top,white ,black);
+	border:5px solid transparent;
+	background-origin: border-box;
+	background-repeat: repeat-y;
+	background-position: 0 0;
+	/* width:500px; */
+	height: 91px;
+	border-radius:8px;
+	animation: borders 20s linear 0s infinite;
 	@media (max-width:1000px) {
-		margin-left:auto;
+		margin-left: auto;
 		margin-right: auto;
+	}
+	@media (max-width:580px) {
+		height:60px;
+	}
+	@media (max-width:330px) {
+
+	}
+}
+.contacts__headBig_1 {
+	margin-top:0;
+	margin-bottom:0;
+	position: absolute;
+	height: 90px;
+	left:-5px;
+	right: -5px;
+	top:-5px;
+	bottom: -5px;
+	border:5px solid transparent;
+	background-color: #cccccc;
+	background-clip: padding-box;
+	border-radius:8px;
+	/* border-image-source:linear-gradient(to top,black ,white);
+	border-image-slice:6;
+	border-radius:15px; */
+	/* &::before,&::after {
+		content: linear-gradient(to top,black ,white);
+		display: inline-block;
+		width:20px;
+		height:30px;
+	} */
+	/* border-left-color: linear-gradient(to left,black ,white); */
+	@media (max-width:1000px) {
 		text-align: center;
 	}
 	@media (max-width:580px) {
 		font-size:2.3rem;
+		height: 60px;
 	}
 	@media (max-width:330px) {
 		font-size:2rem;
@@ -58,6 +139,9 @@
 	width:80%;
 	margin-top:0;
 	margin-bottom:20px;
+	color:rgba(0,0,0,0.4);
+	font-weight: 600;
+	text-shadow: 5px -4px 20px #fff;
 	@media (max-width:1000px) {
 		margin-left:auto;
 		margin-right: auto;
