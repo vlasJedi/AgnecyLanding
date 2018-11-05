@@ -1,6 +1,15 @@
 .section__offers {
 	margin-top:100px;
 	margin-bottom:85px;
+	@media (max-width: 1002px) {
+		margin-top: 450px;
+	}
+	@media (max-width: 580px) {
+		margin-top: 460px;
+	}
+	@media (max-width: 505px) {
+		margin-top: 90%;
+	}
 }
 .offers_wrap {
 	margin-right: auto;
@@ -10,7 +19,7 @@
 	margin-bottom:34px;
 	margin-top:0;
 	@media (max-width:1235px) {
-		margin-left:auto;
+		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
 	}
@@ -30,6 +39,7 @@
 	color:$ButtonBack;
 	border-radius:7px;
 	border:2px solid $ButtonBack;
+	margin-bottom: 100px;
 	&:hover {
 		background-color:#ffefef;
 		transition: background-color 0.3s ease-out;
@@ -44,9 +54,9 @@
 	}
 }
 .offers_media {
-	@media (max-width:1235px) {
-		margin-bottom: 60px;
-	}
+/* 	@media (max-width:1235px) {
+	margin-bottom: 60px;
+} */
 }
 .offers__desc {
 	margin-top:10px;

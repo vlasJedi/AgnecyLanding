@@ -30,17 +30,25 @@
 	top:0;
 	left: 0;
 }
-.header-wrap {
+.header-wrap__inflow {
+	position: relative;
 	max-width: 1250px;
+	top:15px;
 	margin-left: auto;
 	margin-right: auto;
+	border:1px solid transparent;
+}
+.header-wrap {
 	position: absolute;
-	left:143px;
-	top:15px;
+	left:0;
 	width:100%;
 	height: 100%;
 	background-color: transparent;
 	z-index: 4;
+	/* @media (max-width: 1250px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	} */
 }
 .sect__contacts {
 	justify-content:space-between;
@@ -48,18 +56,21 @@
 }
 .contacts__text {
 	width:609px;
-	@media (max-width:1000px) {
+	@media (max-width:1002px) {
 		margin-left:auto;
 		margin-right: auto;
+	}
+	@media (max-width:420px) {
+		width:100%;
 	}
 }
 .section-contacts {
 	border:1px solid transparent;
 }
 .covers {
-	margin-left:-3px;
 	margin-top:0;
 	margin-bottom:0;
+	margin-right: 20px;
 	position: relative;
 	background-clip: border-box;
 	background-image:linear-gradient(to top,white ,black);
@@ -70,15 +81,12 @@
 	height: 91px;
 	border-radius:8px;
 	animation: borders 20s linear 0s infinite;
-	@media (max-width:1000px) {
+	@media (max-width:1002px) {
 		margin-left: auto;
 		margin-right: auto;
 	}
 	@media (max-width:580px) {
 		height:60px;
-	}
-	@media (max-width:330px) {
-
 	}
 }
 .contacts__headBig_1 {
@@ -104,7 +112,7 @@
 		height:30px;
 	} */
 	/* border-left-color: linear-gradient(to left,black ,white); */
-	@media (max-width:1000px) {
+	@media (max-width:1002px) {
 		text-align: center;
 	}
 	@media (max-width:580px) {
@@ -119,29 +127,30 @@
 .contacts__headBig_2 {
 	letter-spacing:7px;
 	margin-bottom:15px;
-	margin-top:0;
-	@media (max-width:1000px) {
+	margin-top:10px;
+	@media (max-width:1002px) {
 		margin-left:auto;
 		margin-right: auto;
 		text-align: center;
 	}
 	@media (max-width:580px) {
-		font-size:2.3rem;
+		font-size:2.2rem;
 		letter-spacing:4px;
 	}
 	@media (max-width:330px) {
-		font-size:2rem;
+		font-size:1.7rem;
 		letter-spacing:3px;
 	}
 }
 .contacts__par {
 	width:80%;
 	margin-top:0;
-	margin-bottom:20px;
-	color:rgba(0,0,0,0.6);
+	margin-bottom:10px;
+	color:rgba(0,0,0,0.8);
 	font-weight: 600;
 	text-shadow: 5px -4px 20px #fff;
-	@media (max-width:1000px) {
+	font-size:1.2rem;
+	@media (max-width:1002px) {
 		margin-left:auto;
 		margin-right: auto;
 		text-align: center;
@@ -152,8 +161,10 @@
 	width:470/$maxW*100%;
 	max-width:470px;
 	align-self: flex-end;
-	@media (max-width:1000px) {
-		margin-left:auto;
+	margin-top: 0;
+	margin-bottom: auto;
+	@media (max-width:1002px) {
+		margin-left: auto;
 		margin-right: auto;
 	}
 }
@@ -179,4 +190,21 @@
 	font-weight: 700;
 	height:80px;
 	text-shadow:3px 3px 12px black;
+	@media (max-width: 480px) {
+		font-size:1rem;
+	}
+}
+.contacts__button {
+	@media (max-width:1002px) {
+		margin-bottom:100px;
+	}
+	@media (max-width: 580px) {
+		margin-bottom:180px;
+	}
+	@media (max-width: 497px) {
+		margin-bottom:120px;
+	}
+	@media (max-width: 394px) {
+		margin-bottom:80px;
+	}
 }

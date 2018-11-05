@@ -83,11 +83,10 @@
 		border-color:#ff7070;
 		background-color:#ec0b4b;
 	}
-	@media (max-width:1000px) {
+	@media (max-width:1002px) {
 		display:block;
 		margin-left:auto;
 		margin-right: auto;
-		margin-bottom:70px;
 	}
 }
 .input {
@@ -143,7 +142,7 @@
 		padding-right:0;
 	}
 	@media (max-width:430px) {
-		max-width:290px !important;
+		/* max-width:290px !important; */
 	}
 }
 
