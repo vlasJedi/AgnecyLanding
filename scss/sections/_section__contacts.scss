@@ -36,7 +36,10 @@
 	top:15px;
 	margin-left: auto;
 	margin-right: auto;
-	border:1px solid transparent;
+	@media (max-width:600px) {
+		top: 0;
+	}
+	/* border:1px solid transparent; */
 }
 .header-wrap {
 	position: absolute;
@@ -161,7 +164,7 @@
 	width:470/$maxW*100%;
 	max-width:470px;
 	align-self: flex-end;
-	margin-top: 0;
+	margin-top: 15px;
 	margin-bottom: auto;
 	@media (max-width:1002px) {
 		margin-left: auto;

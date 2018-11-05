@@ -295,11 +295,10 @@ body {
 .header {
   background: #313030;
   font-size: .875rem;
-  font-weight: bold;
-  margin-top: 15px; }
+  font-weight: bold; }
 
 .bigmac {
-  margin-top: 30px;
+  margin-top: 10px;
   float: right;
   margin-right: 11px;
   display: none;
@@ -601,7 +600,10 @@ body {
   top: 15px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid transparent; }
+  /* border:1px solid transparent; */ }
+  @media (max-width: 600px) {
+    .header-wrap__inflow {
+      top: 0; } }
 
 .header-wrap {
   position: absolute;
@@ -726,7 +728,7 @@ body {
   width: 37.6%;
   max-width: 470px;
   align-self: flex-end;
-  margin-top: 0;
+  margin-top: 15px;
   margin-bottom: auto; }
   @media (max-width: 1002px) {
     .contacts__figure {
