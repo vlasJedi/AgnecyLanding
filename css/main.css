@@ -614,7 +614,6 @@ body {
   background-origin: border-box;
   background-repeat: repeat-y;
   background-position: 0 0;
-  /* width:500px; */
   height: 91px;
   border-radius: 8px;
   animation: borders 20s linear 0s infinite; }
@@ -683,7 +682,7 @@ body {
   width: 80%;
   margin-top: 0;
   margin-bottom: 20px;
-  color: rgba(0, 0, 0, 0.4);
+  color: rgba(0, 0, 0, 0.6);
   font-weight: 600;
   text-shadow: 5px -4px 20px #fff; }
   @media (max-width: 1000px) {
@@ -953,12 +952,12 @@ body {
     text-align: center; } }
 
 .footer {
-  height: 90px;
+  height: 70px;
   background: #313030;
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 5;
   width: 100%;
   opacity: .9; }
   @media (max-width: 550px) {

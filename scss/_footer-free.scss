@@ -1,11 +1,11 @@
 // FOOTER 
 .footer {
-	height: 90px;
+	height: 70px;
 	background:$footerBack;
 	position:fixed;
 	bottom:0;
 	left:0;
-	z-index:2;
+	z-index:5;
 	width:100%;
 	opacity:.9;
 	@media (max-width:550px) {
