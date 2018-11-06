@@ -69,6 +69,7 @@
 }
 .section-contacts {
 	border:1px solid transparent;
+	margin-top:160px;
 }
 .covers {
 	margin-top:0;
@@ -205,9 +206,9 @@
 		margin-bottom:180px;
 	}
 	@media (max-width: 497px) {
-		margin-bottom:120px;
+		margin-bottom:150px;
 	}
 	@media (max-width: 394px) {
-		margin-bottom:80px;
+		margin-bottom:120px;
 	}
 }
