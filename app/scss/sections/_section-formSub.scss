@@ -1,0 +1,72 @@
+.section-formSub {
+	background-image: url('../img/back/formSubBack.jpg');
+    height:512px;
+    margin-top:85px;
+    @media (max-width:860px) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+}
+.formSub__head {
+	color:$Back2;
+	text-align:center;
+	@extend %cen;
+	margin-top:130px;
+	font-size:2.625rem;
+	margin-bottom:25px;
+	@media (max-width:1040px) {
+		margin-top:40px;
+	}
+	@media (max-width:700px) {
+		font-size:1.9rem;
+	}
+}
+.formSub__par {
+	color:$Back2;
+	@extend %cen;
+	text-align:center;
+	font-size:1.625rem;
+	margin-bottom:70px;
+	@media (max-width:1000px) {
+		margin-bottom:20px;
+		font-size:1.4rem;
+	}
+	@media (max-width:400px) {
+		font-size:1.2rem;
+	}
+
+}
+.formSub-wrap {
+	max-width:800px;
+	@extend %cen;
+	display:flex;
+	flex-wrap:wrap;
+	@media (max-width:1000px) {
+		flex-flow:column;
+	}
+}
+.formSub__input {
+	margin-right:20px;
+	margin-left: auto;
+	max-width:520px;
+	width:69%;
+	@media (max-width:1000px) {
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 20px;
+	}
+	@media (max-width:450px) {
+		height:70px;
+		width:80%;
+		margin-left:auto;
+		margin-right:auto;
+		margin-bottom: 20px;
+	}
+}
+.formSub__btn {
+	width:215px;
+	height:80px;
+	text-transform:uppercase;
+	margin-left: auto; 
+}

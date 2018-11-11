@@ -1,0 +1,10 @@
+.header_ {
+		margin-bottom:80px;
+		height:90px;
+		width:100%;
+		max-width:$maxw;
+		@media (max-width:600px) {
+			height: 70px;
+			margin-bottom:65px;
+	}
+	}
