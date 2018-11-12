@@ -1,0 +1,9 @@
+{
+  "presets": ["@babel/preset-env"],
+  "plugins": ["@babel/plugin-transform-arrow-functions",
+	"@babel/plugin-transform-block-scoped-functions",
+	"@babel/plugin-transform-block-scoping",
+	"@babel/plugin-transform-function-name"]
+}
+
+
