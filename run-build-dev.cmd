@@ -1,4 +1,4 @@
-cd C:\apache\webpack_demo\www
+cd C:\apache\agnecy\www
 npm run build
 cmd /k
 PAUSE

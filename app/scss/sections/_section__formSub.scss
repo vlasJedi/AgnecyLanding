@@ -45,7 +45,11 @@
 	flex-wrap:wrap;
 	position: relative;
 	align-items: center;
+	@media (max-width: 1270px) {
+		height: 130px;
+	}
 	@media (max-width:1000px) {
+		height: 250px;
 		flex-flow:column;
 	}
 }

@@ -1,14 +1,11 @@
 .section__offers {
 	margin-top:100px;
 	margin-bottom:85px;
-	@media (max-width: 1002px) {
-		margin-top: 450px;
+	@media (max-width: 1136px) {
+		margin-top: 400px;
 	}
 	@media (max-width: 580px) {
-		margin-top: 460px;
-	}
-	@media (max-width: 505px) {
-		margin-top: 90%;
+		margin-top: 400px;
 	}
 }
 .offers_wrap {
