@@ -313,14 +313,26 @@
 			</div>
 			<div class="connect__wrap-footer">	
 				<div class="connect__inner-wrap">
-					<div class="connect__inputs-user-info">
-						<input type="text" name="fname" class="input connect__input" placeholder="Type your first name" required>
-						<input type="text" name="mail" class="input connect__input" placeholder="Type your email" required>
-					</div>
-					<input type="text" name="msg" class="input connect__input connect__input-msg" placeholder="Type your message" required>
-					<button type="button" class="button connect__button">
+					<form action="mailto:vlas.d78@gmail.com" method="post" id="formSendEmail" action="./sendMsg.php" enctype="multipart/form-data">
+						<div class="connect__inputs-user-info">
+							<div class="input-name">
+								<input type="text" name="fname" class="input connect__input connect__input-name" placeholder="Type your first name" form="formSendEmail"required>
+								<i class = "fas fa-check icon__accept
+							icon_accept-offset"></i>
+								<i class="fas fa-times icon__error
+							icon_error-offset"></i>
+							</div>
+							<div class="input-mail">
+								<input type="text" name="mail" class="input connect__input connect__input-mail" placeholder="Type your email" form="formSendEmail" form="formSendEmail" required>
+								<i class = "fas fa-check icon__accept"></i>
+								<i class="fas fa-times icon__error"></i>
+							</div>
+						</div>
+						<textarea name="msg" class="input connect__input connect__input-msg" placeholder="Type your message" form="formSendEmail"></textarea>
+						<button type="button" class="button connect__button" form="formSendEmail">
 						send message
-					</button>
+						</button>
+					</form>
 				</div>
 				<div class="contact-info connect__contact-info">
 					<div class="info__content">		

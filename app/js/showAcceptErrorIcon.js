@@ -1,15 +1,14 @@
 ;
 "use strict"
-import validateEmail from './validateEmail';
 
 export default function showAcceptErrorIcon( input, iconAccept, 
-  iconError, classVisible) {
+  iconError, classVisible, funcCheck ) {
         if (input.value == false) {
           iconAccept.classList.remove(classVisible);
           iconError.classList.remove(classVisible);
         return;
       }
-        if (validateEmail(input)) {
+        if (funcCheck(input)) {
           if (!iconAccept.classList.contains(classVisible)) {
             iconAccept.classList.add(classVisible);
           }
