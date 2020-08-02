@@ -1,6 +1,7 @@
 import angular from "angular";
 import uiRouter from "angular-ui-router";
 import componentsProvider from "../components/components-provider";
+import navigationService from "../services/navigation-service";
 import '../scss/main.scss';
 import '../index.temp.html';
 import validateEmail from './validateEmail';
@@ -11,42 +12,32 @@ import navCollapse from './navCollapse';
 import showAcceptErrorIcon from './showAcceptErrorIcon';
   
    const appModuleNg = angular.module("app", [uiRouter]);
-   componentsProvider("main").forEach(comp => appModuleNg.component(comp.name, comp.comp()));
+
+   const navigationServiceObj = navigationService();
+   appModuleNg.factory(navigationServiceObj.serviceId, navigationServiceObj.instance);
+
+   componentsProvider("base").forEach(comp => appModuleNg.component(comp.name, comp.comp()));
+
+   componentsProvider(window.location.pathname === "" || window.location.pathname === "/" ? "home" : window.location.pathname)
+      .forEach(comp => appModuleNg.component(comp.name, comp.comp()));
 
    appModuleNg.config(function($stateProvider) {
-    var rootState = {
-      name: 'root',
-      url: '/',
-      template: '<app-component></app-component>'
-    };
-    var rootStateAlias = {
-      name: 'rootAlias',
-      url: '',
-      template: '<app-component></app-component>'
-    };
-  
-    var homeState = {
-      name: 'home',
-      url: '/home',
-      template: '<app-component></app-component>'
-    }
-  
-    $stateProvider.state(rootState);
-    $stateProvider.state(rootStateAlias);
-    $stateProvider.state(homeState);
+    $stateProvider.state({name: 'root', url: '/', template: '<home></home>'});
+    $stateProvider.state({name: 'rootAlias', url: '', template: '<home></home>'});
+    $stateProvider.state({name: 'home', url: '/home', template: '<home></home>'});
   });
   appModuleNg.controller("rootCtrl", ["$scope", "$state", "$location", function($scope, $state, $location) {
       /* $state.go($location.path || ); */
   }]);
 
-	let mobileNav = document.querySelectorAll(".link_block");
+	/* let mobileNav = document.querySelectorAll(".link_block");
 	let classIn = "js-uncollapsed";
 	let classOut = "js-collapsed";
 	let burger = document.querySelector(".bigmac");
 	let btnSubs = document.querySelector(".formSub__btn");
   let inpSubs = document.querySelector(".formSub__input");
   let inpName = document.querySelector(".connect__input-name");
-  let inpMail = document.querySelector(".connect__input-mail");
+  let inpMail = document.querySelector(".connect__input-mail"); */
   
 	/* burger.addEventListener("click", function ()
 		{

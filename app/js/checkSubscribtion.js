@@ -3,7 +3,7 @@
 export default function checkSubscribtion( input ) {
         let xhr = new XMLHttpRequest();
         let formData = new FormData();
-        formData.append("email",input.value)
+        formData.append("email",input.value);
         // PHP FILE TO HANDLE SUBSCRIBTION
         xhr.open('POST', './subscribeUser.php', true);
         xhr.send(formData);

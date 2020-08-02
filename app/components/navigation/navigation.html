@@ -1,39 +1,17 @@
+
 <div class="header header_">
     <div class="wrap__flex-nav">
     <ul class="nav nav_">
-        <li class="nav__item">
-            <a ui-sref="home" ui-sref-active="active" class="link link_1">
+        <li ng-repeat="navItem in $ctrl.navItems track by navItem.name" class="nav__item">
+            <a ui-sref="{{::navItem.path}}" ng-click="$ctrl.onClicked()" ui-sref-active="active" class="link">
                 <div class="link__cap">
-                    home
-                </div>
-            </a>
-        </li>
-        <li class="nav__item">
-            <a ui-sref="portfolio" ui-sref-active="active" class="link link_2">
-                <div class="link__cap">
-                    portfolio
-                </div>
-            </a>
-        </li>
-        <li class="nav__item">
-            <a ui-sref="about us" ui-sref-active="active" class="link link_3" >
-                <div class="link__cap">
-                    about us
-                </div>
-            </a>
-        </li>
-        <li class="nav__item">
-            <a ui-sref="contact" ui-sref-active="active" class="link link_4">
-                <div class="link__cap">
-                    contact
+                    {{::navItem.displayName}}
                 </div>
             </a>
         </li>
     </ul>
 </div>
-    <div class="bigmac">
-        <div class="bigmac__inner"></div>
-        <div class="bigmac__inner"></div>
-        <div class="bigmac__inner"></div>
-    </div>
+
+   <navigation-mobile></navigation-mobile>
+
 </div>
