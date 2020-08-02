@@ -8,14 +8,14 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 module.exports = {
 	mode: 'development',
-	devtool: 'inline-source-map',
+	devtool: 'source-map',
 	devServer: {
 		contentBase: './dist',
 		hot: true
 	},
-	optimization: {
+	/*optimization: {
 		minimizer: [new UglifyJsPlugin()]
-	},
+	},*/
 	entry: './app/js/index.js',
 	output: {
 		filename: 'index.js',
@@ -65,8 +65,8 @@ module.exports = {
 			inject: 'body',
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new MiniCssExtractPlugin({
+		/*new MiniCssExtractPlugin({
 		filename: 'main.css'
-		})
+		})*/
 		]
 };

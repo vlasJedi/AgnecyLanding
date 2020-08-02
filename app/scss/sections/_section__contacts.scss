@@ -3,7 +3,7 @@
 	height:650px;
 }
 .parallax_1 {
-	background-image: url('../img/back/parallax_2.jpg');
+	background-image: url('../components/app/img/back/parallax_2.jpg');
 	background-attachment: fixed;
 	background-repeat:none;
 	background-clip: padding-box;
@@ -18,7 +18,7 @@
 	@extend %cen;
 }
 .parallax_2 {
-	background-image: url('../img/back/parallax_1.jpg');
+	background-image: url('../components/app/img/back/parallax_1.jpg');
 	background-attachment: fixed;
 	background-repeat:none;
 	background-clip: border-box;
