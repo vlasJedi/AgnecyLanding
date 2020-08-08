@@ -1,0 +1,1 @@
+This is simple SPA app to play with AngularJS
