@@ -3,7 +3,7 @@
     <div class="wrap__flex-nav">
     <ul class="nav nav_">
         <li ng-repeat="navItem in $ctrl.navItems track by navItem.name" class="nav__item">
-            <a ui-sref="{{::navItem.path}}" ng-click="$ctrl.onClicked()" ui-sref-active="active" class="link">
+            <a href="" ng-click="$ctrl.onClicked($event, navItem)" class="link">
                 <div class="link__cap">
                     {{::navItem.displayName}}
                 </div>

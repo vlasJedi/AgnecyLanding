@@ -1,5 +1,0 @@
-REMOVE ALREADY DROPPED NODE_MODULES AND EVER IGNORE IT
-git rm -r --cached node_modules && touch .gitignore && echo "node_modules/" >> .gitignore
-
-IGNORE NODE_MODULES
-touch .gitignore && echo "node_modules/" >> .gitignore

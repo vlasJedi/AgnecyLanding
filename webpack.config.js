@@ -10,8 +10,11 @@ module.exports = {
 	mode: 'development',
 	devtool: 'source-map',
 	devServer: {
+		open: {
+			app: ["chrome", "--remote-debugging-port=9222"]
+		},
 		contentBase: './dist',
-		hot: true
+		hot: true,
 	},
 	/*optimization: {
 		minimizer: [new UglifyJsPlugin()]

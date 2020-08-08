@@ -4,10 +4,12 @@ export default function Navigation() {
         template: navigationHTML,
         controller: ["navigationService", function NavigationComtroller(navService) {
             this.navItems = navService.getNavItems();
-            this.onClicked = event => this.onClick(event);
+            this.onClicked = (event, navItem) => {
+                this.clickCallback({event: event, navItem: navItem});
+            }
         }],
         bindings: {
-            onClick: "&"
+            clickCallback: "&"
         }
     };
 };

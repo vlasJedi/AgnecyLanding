@@ -1,5 +1,5 @@
 import angular from "angular";
-import uiRouter from "angular-ui-router";
+import "angular-route";
 import componentsProvider from "../components/components-provider";
 import navigationService from "../services/navigation-service";
 import '../scss/main.scss';
@@ -10,24 +10,26 @@ import checkSubscribtion from './checkSubscribtion';
 import navCollapse from './navCollapse';
 // INVLUDES VALIDATE EMAIL
 import showAcceptErrorIcon from './showAcceptErrorIcon';
-  
-   const appModuleNg = angular.module("app", [uiRouter]);
+   const appModuleNg = angular.module("app", ["ngRoute"]);
 
    const navigationServiceObj = navigationService();
-   appModuleNg.factory(navigationServiceObj.serviceId, navigationServiceObj.instance);
+   appModuleNg.factory(navigationServiceObj.serviceId, navigationServiceObj.export);
 
-   componentsProvider("base").forEach(comp => appModuleNg.component(comp.name, comp.comp()));
+   componentsProvider().forEach(compObj => appModuleNg.component(compObj.name, compObj.comp()));
 
-   componentsProvider(window.location.pathname === "" || window.location.pathname === "/" ? "home" : window.location.pathname)
-      .forEach(comp => appModuleNg.component(comp.name, comp.comp()));
+   appModuleNg.config(($routeProvider, $locationProvider) => {
+    $routeProvider.when('/', {template: '<home></home>'});
+    $routeProvider.when('', {template: '<home></home>'});
+    $routeProvider.when('/home', {template: '<home></home>'});
+    $routeProvider.when('/contact', {template: '<contact></contact>'});
+    $routeProvider.when('/about-us', {template: '<about-us></about-us>'});
+    $routeProvider.when('/portfolio', {template: '<portfolio></portfolio>'});
+    $routeProvider.otherwise('/home');
 
-   appModuleNg.config(function($stateProvider) {
-    $stateProvider.state({name: 'root', url: '/', template: '<home></home>'});
-    $stateProvider.state({name: 'rootAlias', url: '', template: '<home></home>'});
-    $stateProvider.state({name: 'home', url: '/home', template: '<home></home>'});
+    $locationProvider.html5Mode({enabled: true, requireBase: false});
   });
-  appModuleNg.controller("rootCtrl", ["$scope", "$state", "$location", function($scope, $state, $location) {
-      /* $state.go($location.path || ); */
+  appModuleNg.controller("rootCtrl", ["$scope", "$location", function($scope, $location) {
+      //$location.path = window.location.pathname;
   }]);
 
 	/* let mobileNav = document.querySelectorAll(".link_block");
