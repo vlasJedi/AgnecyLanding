@@ -1,7 +1,0 @@
-CREATE DATABASE agnecyPage;
-use agnecyPage;
-CREATE TABLE subsribers (
-	id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-	firstname VARCHAR(20) NOT NULL,
-	secondname VARCHAR(20) NOT NULL,
-	email VARCHAR(20) NOT NULL );
