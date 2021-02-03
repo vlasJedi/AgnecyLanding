@@ -1,4 +1,6 @@
 import angular from "angular";
+// Import an entire module for side effects only, without importing anything.
+// This runs the module's global code, but doesn't actually import any values.
 import "angular-route";
 import componentsProvider from "../components/components-provider";
 import navigationService from "../services/navigation-service";
@@ -19,7 +21,7 @@ appModuleNg.config(($routeProvider, $locationProvider) => {
   $routeProvider.when('/about-us', { template: '<about-us></about-us>' });
   $routeProvider.when('/portfolio', { template: '<portfolio></portfolio>' });
   $routeProvider.otherwise('/home');
-
+  // affects current window.href
   $locationProvider.html5Mode({ enabled: true, requireBase: false });
 });
 appModuleNg.controller("rootCtrl", ["$scope", "$location", function ($scope, $location) {
