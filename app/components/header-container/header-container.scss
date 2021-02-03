@@ -1,4 +1,6 @@
 
+@import "@app/scss/_constants.scss";
+@import "@app/scss/_short.scss";
 .header {
 	//position: absolute;
 	background: $NavBack;
@@ -68,4 +70,15 @@
 	@media (max-width: 600px) {
 		display: none;
 	}
+}
+
+.header_ {
+    margin-bottom:80px;
+    height:90px;
+    width:100%;
+    max-width:$maxw;
+    @media (max-width:600px) {
+        height: 70px;
+        margin-bottom:65px;
+}
 }

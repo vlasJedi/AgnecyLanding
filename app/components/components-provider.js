@@ -1,12 +1,12 @@
-import app from "./app/app";
-import homePage from "./pages/home/home";
-import contactPage from "./pages/contact/contact";
-import aboutUsPage from "./pages/about-us/about-us";
-import portfolioPage from "./pages/portfolio/portfolio";
+import app from "@app/components/app/app";
+import homePage from "@app/components/pages/home/home";
+import contactPage from "@app/components/pages/contact/contact";
+import aboutUsPage from "@app/components/pages/about-us/about-us";
+import portfolioPage from "@app/components/pages/portfolio/portfolio";
 
-import navigation from "./navigation/navigation";
-import navigationMobile from "./navigation/mobile/navigation-mobile";
-import headerContainer from "./header-container/header-container";
+import navigation from "@app/components/navigation/navigation";
+import navigationMobile from "@app/components/navigation/mobile/navigation-mobile";
+import headerContainer from "@app/components/header-container/header-container";
 
 const allComps = [
     {name: "navigationMobile", comp: navigationMobile},

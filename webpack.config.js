@@ -36,10 +36,16 @@ module.exports = (env, argv) => {
             contentBase: './dist',
             hot: true,
         },
+        // very useful feature to avoid complicated imports due to relative filepaths
+        resolve: {
+            alias: {
+                "@app": path.resolve(__dirname,"./app")
+            }
+        },
         optimization: this.mode === 'production' ? ({
             minimizer: [/*new UglifyJsPlugin(),*/new OptimizeCssAssetsPlugin({})]
         }) : undefined,
-        entry: './app/js/index.js',
+        entry: './app/bundles/index.js',
         output: {
             filename: 'index.js',
             path: path.resolve(__dirname, 'dist')
@@ -95,7 +101,7 @@ module.exports = (env, argv) => {
             ? [
                 //new CleanWebpackPlugin(['dist']),
                 new HtmlWebpackPlugin({
-                    template: './app/index.temp.html'
+                    template: './app/bundles/index.temp.html'
                 }),
                 new MinifyPlugin(),
                 new MiniCssExtractPlugin({
@@ -107,7 +113,7 @@ module.exports = (env, argv) => {
             [
                 //new CleanWebpackPlugin(['dist']),
                 new HtmlWebpackPlugin({
-                    template: './app/index.temp.html',
+                    template: './app/bundles/index.temp.html',
                 }),
                 new webpack.HotModuleReplacementPlugin(),
                 /*new MiniCssExtractPlugin({

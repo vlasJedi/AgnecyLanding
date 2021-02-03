@@ -1,4 +1,5 @@
 import headerHTML from "./header-container.html";
+import './header-container.scss';
 export default function HeaderContainer() {
     return {
         template: headerHTML,

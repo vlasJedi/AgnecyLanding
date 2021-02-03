@@ -2,10 +2,10 @@ import angular from "angular";
 // Import an entire module for side effects only, without importing anything.
 // This runs the module's global code, but doesn't actually import any values.
 import "angular-route";
-import componentsProvider from "../components/components-provider";
-import navigationService from "../services/navigation-service";
-import '../scss/main.scss';
-import '../index.temp.html';
+import componentsProvider from "@app/components/components-provider";
+import navigationService from "@app/services/navigation-service";
+import './main.scss';
+import './index.temp.html';
 const appModuleNg = angular.module("app", ["ngRoute"]);
 
 const navigationServiceObj = navigationService();

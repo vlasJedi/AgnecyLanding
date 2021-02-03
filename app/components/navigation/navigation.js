@@ -1,4 +1,5 @@
 import navigationHTML from "./navigation.html";
+import './navigation.scss';
 export default function Navigation() {
     return {
         template: navigationHTML,

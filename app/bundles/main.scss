@@ -1,6 +1,6 @@
 
-@import "_constants.scss"; // COLORS
-@import "_short.scss"; // MIXIN etc..
+@import "@app/scss/_constants.scss"; // COLORS
+@import "@app/scss/_short.scss"; // MIXIN etc..
 
 html {
 	font-size:16px;
@@ -72,19 +72,12 @@ body {
 	margin-bottom: 8px;
 }
 
-@import "_base-scss-classes.scss";
-@import "header/_header_full.scss";
-@import "_section.scss";
-@import "sections/_section__offers.scss";
-@import "sections/_section__products.scss";
-@import "sections/_section__team.scss";
-@import "sections/_section__contacts.scss";
-@import "sections/_section__formSub.scss";
-@import "sections/_section__connect.scss";
-@import "_footer-free.scss";
-
-
-
-
-
-
+@import "@app/scss/_base-scss-classes.scss";
+@import "@app/scss/_section.scss";
+@import "@app/scss/sections/_section__offers.scss";
+@import "@app/scss/sections/_section__products.scss";
+@import "@app/scss/sections/_section__team.scss";
+@import "@app/scss/sections/_section__contacts.scss";
+@import "@app/scss/sections/_section__formSub.scss";
+@import "@app/scss/sections/_section__connect.scss";
+@import "@app/scss/_footer-free.scss";
