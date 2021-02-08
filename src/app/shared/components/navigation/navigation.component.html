@@ -1,1 +1,13 @@
-<p>navigation works!</p>
+<div class="header header_">
+    <div class="wrap__flex-nav">
+    <ul class="nav nav_">
+        <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav__item">
+            <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="link">
+                <div class="link__cap">
+                    {{navItem.displayName}}
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+</div>
