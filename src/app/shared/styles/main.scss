@@ -66,3 +66,74 @@ $maxW:1250;
 	padding-bottom:$pb;
 	margin-bottom:$mb;
 }
+
+
+html {
+	font-size:16px;
+	font-family:$fontfam;
+}
+body {
+	box-sizing:border-box;
+	color:$Heads;
+	width: 100vw;
+	overflow-x:hidden;
+	line-height:$lineText;
+	background:$Back1;
+	margin:0 auto;}
+
+
+
+.contentWrapper {
+	max-width:$maxw;
+	margin:0 auto;}
+
+.no-pad {
+	padding-left:0;
+	padding-right:0;
+}
+.no-mar {
+	margin-right: 0;
+	margin-left: 0;
+}
+.pr-30 {
+	padding-right: 30px;
+}
+.mb-25 {
+	margin-bottom: 25px;
+}
+.mt-6 {
+	margin-top: 6px;
+}
+.clear {
+	margin: 0;
+	padding: 0;
+}
+.pageBackColor2 {
+	background:$Back2;
+	margin-bottom: 0;
+	/* height: auto; */
+}
+.df {
+	display: flex;
+}
+.par_transparent {
+	color:$Transparent;
+}
+.mr0 {
+	margin-right: 0;
+}
+.horRow {
+	width:135px;
+	background:$ButtonBack;
+	height:3px;
+	@extend %cen;	
+}
+.figureWrap {
+	display:flex;
+}
+.ml-8 {
+	margin-left: 8px;
+}
+.mb-8 {
+	margin-bottom: 8px;
+}
