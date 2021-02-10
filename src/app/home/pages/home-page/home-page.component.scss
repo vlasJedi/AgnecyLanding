@@ -409,10 +409,17 @@
 
 .header-section-container {
     position: relative;
+	height: 650px;
 }
 
 .header-navigation-container {
 	position: absolute;
+	width: 100%;
+}
+
+.header-app-navigation {
+    margin-left: 0;
+	margin-right: 0;
 }
 
 .header-background-container {
@@ -424,6 +431,7 @@
     //max-width: $maxw;
 	height:650px;
     width: 100%;
+	max-height: 650px;
 }
 .header-background-parallax_1 {
 	background-image: url('/assets/img/back/parallax_2.jpg');
