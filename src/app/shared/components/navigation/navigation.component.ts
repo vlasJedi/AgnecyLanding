@@ -12,6 +12,8 @@ export class NavigationComponent implements OnInit {
   // directly calling via this.onClickCall is not possible in template
   onClickCall: ((event: MouseEvent, navItem: INavItem) => void) | null = null
 
+  toggleMobileNav: boolean = false
+
   constructor() {
     this.navItems = [
       { name: "home", path: "/home", displayName: "HOME"},

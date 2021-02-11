@@ -3,4 +3,3 @@ export default function NavigationMobile() {
     return {
         template: navigationMobileHTML
     };
-};

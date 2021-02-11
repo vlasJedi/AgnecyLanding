@@ -1,13 +1,24 @@
-<div class="header header_">
-    <div class="wrap__flex-nav">
-    <ul class="nav nav_">
+<nav class="nav-container">
+    <!-- <ul class="nav">
         <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav__item">
             <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="link">
-                <div class="link__cap">
+                <div class="nav-link-text-container">
                     {{navItem.displayName}}
                 </div>
             </a>
         </li>
-    </ul>
-</div>
-</div>
+    </ul> -->
+    <ul class="nav-mobile">
+        <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav__item" [ngClass]="toggleMobileNav ? 'nav-mobile-collapsed' : 'nav-mobile-uncollapsed'">
+        <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="link">
+            <div class="nav-mobile-link-text-container">
+                {{navItem.displayName}}
+            </div>
+        </a>
+    </li>
+   </ul>
+   <div class="nav-mobile-manu-container">
+    <img class="nav-mobile-manu-bars-horizontal" src="/assets/img/icons/bars-solid.svg" [hidden]="toggleMobileNav" (click)="toggleMobileNav = !toggleMobileNav">
+    <img class="nav-mobile-manu-bars-horizontal" src="/assets/img/icons/times-solid.svg" [hidden]="!toggleMobileNav" (click)="toggleMobileNav = !toggleMobileNav">
+   </div>
+</nav>
