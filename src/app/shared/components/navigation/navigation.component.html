@@ -1,24 +1,33 @@
-<nav class="nav-container">
-    <!-- <ul class="nav">
-        <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav__item">
-            <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="link">
-                <div class="nav-link-text-container">
-                    {{navItem.displayName}}
-                </div>
-            </a>
-        </li>
-    </ul> -->
-    <ul class="nav-mobile">
-        <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav__item" [ngClass]="toggleMobileNav ? 'nav-mobile-collapsed' : 'nav-mobile-uncollapsed'">
-        <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="link">
-            <div class="nav-mobile-link-text-container">
-                {{navItem.displayName}}
+<nav [ngClass]="getNavContainerStyle()">
+    <div *ngIf="!isMobileNavEnabled(); else elseBlock">
+        <ul class="nav">
+            <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container">
+                <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">
+                    <div class="nav-link-text-container">
+                        {{navItem.displayName}}
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <ng-template #elseBlock>
+        <div class="nav-mobile-menu-container">
+            <div class="nav-mobile-icons-container">
+                <img class="nav-mobile-menu-icon" src="/assets/img/icons/bars-solid.svg"
+                    [hidden]="isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
+                <img class="nav-mobile-menu-icon" src="/assets/img/icons/times-solid.svg"
+                    [hidden]="!isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
             </div>
-        </a>
-    </li>
-   </ul>
-   <div class="nav-mobile-manu-container">
-    <img class="nav-mobile-manu-bars-horizontal" src="/assets/img/icons/bars-solid.svg" [hidden]="toggleMobileNav" (click)="toggleMobileNav = !toggleMobileNav">
-    <img class="nav-mobile-manu-bars-horizontal" src="/assets/img/icons/times-solid.svg" [hidden]="!toggleMobileNav" (click)="toggleMobileNav = !toggleMobileNav">
-   </div>
+            <ul class="nav-mobile-links-container">
+                <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container"
+                    [ngClass]="getMobileNavLinkStyle()">
+                    <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">
+                        <div class="nav-mobile-link-text-container">
+                            {{navItem.displayName}}
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </ng-template>
 </nav>

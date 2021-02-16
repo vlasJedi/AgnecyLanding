@@ -12,7 +12,7 @@ export class NavigationComponent implements OnInit {
   // directly calling via this.onClickCall is not possible in template
   onClickCall: ((event: MouseEvent, navItem: INavItem) => void) | null = null
 
-  toggleMobileNav: boolean = false
+  private isMobileNavMenuOpened: boolean = false
 
   constructor() {
     this.navItems = [
@@ -35,6 +35,33 @@ export class NavigationComponent implements OnInit {
   onClick(event: MouseEvent, navItem: INavItem) {
     if (this.onClickCall == null) return;
     return this.onClickCall(event, navItem);
+  }
+
+  isMobileNavMenuNotCollapsed(): boolean {
+    return this.isMobileNavMenuOpened;
+  }
+
+  toggleMobileNavMenu() {
+    this.isMobileNavMenuOpened = !this.isMobileNavMenuNotCollapsed();
+  }
+
+  getMobileNavLinkStyle() {
+    const isMobileNavOpened = this.isMobileNavMenuNotCollapsed();
+    return {
+      "nav-mobile-uncollapsed": isMobileNavOpened, 
+      "nav-mobile-collapsed": !isMobileNavOpened
+    }
+  }
+
+  isMobileNavEnabled(): boolean {
+    return window.innerWidth < 500;
+  }
+
+  getNavContainerStyle() {
+    return {
+      "nav-container": true,
+      "nav-container__mobile": this.isMobileNavEnabled()
+    };
   }
 
 }

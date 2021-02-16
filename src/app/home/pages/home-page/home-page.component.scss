@@ -413,7 +413,8 @@
 }
 
 .header-navigation-container {
-	position: absolute;
+	z-index: 2;
+	position: fixed;
 	width: 100%;
 }
 
