@@ -18,7 +18,7 @@
                 <img class="nav-mobile-menu-icon" src="/assets/img/icons/times-solid.svg"
                     [hidden]="!isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
             </div>
-            <ul class="nav-mobile-links-container">
+            <ul class="nav-mobile-links-container" [hidden]="!isNavMobileLinksContainerVisible()">
                 <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container"
                     [ngClass]="getMobileNavLinkStyle()">
                     <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { INavItem } from 'shared/models/nav-item.model';
 
 @Component({
@@ -14,7 +14,9 @@ export class NavigationComponent implements OnInit {
 
   private isMobileNavMenuOpened: boolean = false
 
-  constructor() {
+  private wasTouched: boolean = false
+
+  constructor(private changeRef: ChangeDetectorRef) {
     this.navItems = [
       { name: "home", path: "/home", displayName: "HOME"},
       { name: "about-us", path: "/about-us", displayName: "ABOUT US"},
@@ -22,6 +24,9 @@ export class NavigationComponent implements OnInit {
       { name: "contact", path: "/contact", displayName: "CONTACT"}
     ];
     this.onClickCall = () => {};
+    window.onresize = () => {
+      changeRef.detectChanges();
+    };
   }
 
   ngOnInit(): void {
@@ -41,7 +46,12 @@ export class NavigationComponent implements OnInit {
     return this.isMobileNavMenuOpened;
   }
 
+  isNavMobileLinksContainerVisible(): boolean {
+    return this.wasTouched;
+  }
+
   toggleMobileNavMenu() {
+    if (!this.wasTouched) this.wasTouched = true;
     this.isMobileNavMenuOpened = !this.isMobileNavMenuNotCollapsed();
   }
 
