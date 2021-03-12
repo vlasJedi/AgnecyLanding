@@ -1,35 +1,58 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, OnDestroy, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
 import { INavItem } from 'shared/models/nav-item.model';
+import { fromEvent, Subscription } from 'rxjs';
+import { throttleTime } from 'rxjs/operators';
+import { IWrapOverflowed } from 'shared/directives/overflowed.directive';
+
 
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent implements OnInit {
+export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
+  
+  @ViewChild("targetWrapOverflowed") targetToCheckWrap: ElementRef | null = null;
 
   navItems: INavItem[] | null = null
   // directly calling via this.onClickCall is not possible in template
   onClickCall: ((event: MouseEvent, navItem: INavItem) => void) | null = null
 
+  private mobileNavEnabled: boolean = false
   private isMobileNavMenuOpened: boolean = false
 
-  private wasTouched: boolean = false
+  private resizeSubscription: Subscription | null = null
 
-  constructor(private changeRef: ChangeDetectorRef) {
+  public isChildViewsInit: boolean = false;
+  
+  // no bindings at the moment populated
+  constructor(private changeRef: ChangeDetectorRef, public element: ElementRef) {
     this.navItems = [
       { name: "home", path: "/home", displayName: "HOME"},
       { name: "about-us", path: "/about-us", displayName: "ABOUT US"},
       { name: "portfolio", path: "/portfolio", displayName: "PORTFOLIO"},
-      { name: "contact", path: "/contact", displayName: "CONTACT"}
+      { name: "contact", path: "/contact", displayName: "CONTACT"},
+      { name: "test1", path: "/home", displayName: "TESTTESTEST1"},
+      { name: "test2", path: "/home", displayName: "TESTTESTEST2"},
     ];
-    this.onClickCall = () => {};
-    window.onresize = () => {
-      changeRef.detectChanges();
-    };
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    if (this.resizeSubscription) {
+      this.resizeSubscription.unsubscribe();
+      this.resizeSubscription = null;
+    }
+  }
+
+  ngAfterViewInit() {
+    // this updates happens in the moment of initial detect changes cycle,
+    // so if we update some bindings we need schedule/ask to run once again cycle
+    // so consumers of the binding can see it in correct way
+    this.isChildViewsInit = true;
+    this.changeRef.detectChanges();
   }
 
   trackByCall(i: number, navItem: INavItem) {
@@ -46,12 +69,7 @@ export class NavigationComponent implements OnInit {
     return this.isMobileNavMenuOpened;
   }
 
-  isNavMobileLinksContainerVisible(): boolean {
-    return this.wasTouched;
-  }
-
   toggleMobileNavMenu() {
-    if (!this.wasTouched) this.wasTouched = true;
     this.isMobileNavMenuOpened = !this.isMobileNavMenuNotCollapsed();
   }
 
@@ -64,7 +82,7 @@ export class NavigationComponent implements OnInit {
   }
 
   isMobileNavEnabled(): boolean {
-    return window.innerWidth < 500;
+    return this.mobileNavEnabled;
   }
 
   getNavContainerStyle() {
@@ -74,4 +92,16 @@ export class NavigationComponent implements OnInit {
     };
   }
 
+  onItemsHorizontallyWrapped() {
+    this.mobileNavEnabled = true;
+  }
+
+  onItemsHorizontallyUnWrapped() {
+    this.isMobileNavMenuOpened = false;
+    this.mobileNavEnabled = false;
+  }
+
+  getTargetForWrapCheck() {
+    return this.targetToCheckWrap;
+  }
 }

@@ -1,6 +1,11 @@
-<nav [ngClass]="getNavContainerStyle()">
-    <div *ngIf="!isMobileNavEnabled(); else elseBlock">
-        <ul class="nav">
+<nav [ngClass]="getNavContainerStyle()" 
+    wrapOverflowed
+    [targetWrap]="getTargetForWrapCheck()"
+    [start]="isChildViewsInit"
+    (wrapped)="onItemsHorizontallyWrapped()"
+    (unWrapped)="onItemsHorizontallyUnWrapped()">
+    <div [hidden]="isMobileNavEnabled()">
+        <ul #targetWrapOverflowed class="nav">
             <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container">
                 <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">
                     <div class="nav-link-text-container">
@@ -10,24 +15,22 @@
             </li>
         </ul>
     </div>
-    <ng-template #elseBlock>
-        <div class="nav-mobile-menu-container">
-            <div class="nav-mobile-icons-container">
-                <img class="nav-mobile-menu-icon" src="/assets/img/icons/bars-solid.svg"
-                    [hidden]="isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
-                <img class="nav-mobile-menu-icon" src="/assets/img/icons/times-solid.svg"
-                    [hidden]="!isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
-            </div>
-            <ul class="nav-mobile-links-container" [hidden]="!isNavMobileLinksContainerVisible()">
-                <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container"
-                    [ngClass]="getMobileNavLinkStyle()">
-                    <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">
-                        <div class="nav-mobile-link-text-container">
-                            {{navItem.displayName}}
-                        </div>
-                    </a>
-                </li>
-            </ul>
+    <div [hidden]="!isMobileNavEnabled()" class="nav-mobile-menu-container">
+        <div class="nav-mobile-icons-container">
+            <img class="nav-mobile-menu-icon" src="/assets/img/icons/bars-solid.svg"
+                [hidden]="isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
+            <img class="nav-mobile-menu-icon" src="/assets/img/icons/times-solid.svg"
+                [hidden]="!isMobileNavMenuNotCollapsed()" (click)="toggleMobileNavMenu()">
         </div>
-    </ng-template>
+        <ul class="nav-mobile-links-container" [hidden]="!isMobileNavMenuNotCollapsed()">
+            <li *ngFor="let navItem of navItems; trackBy: trackByCall" class="nav-link-container"
+                [ngClass]="getMobileNavLinkStyle()">
+                <a [routerLink]="navItem.path" (click)="onClick($event, navItem)" class="nav-link">
+                    <div class="nav-mobile-link-text-container">
+                        {{navItem.displayName}}
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
