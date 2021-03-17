@@ -44,15 +44,24 @@
 	z-index: 5;
 }
 
+
 .nav-mobile-links-container {
 	position: absolute;
 	z-index: 4;
 	list-style-type: none;
 	padding-left: 0;
-	overflow: hidden;
-	@media (max-width: 600px) {
-		height: 300px;
-	}
+	height: 100vh;
+	overflow: auto;
+	// currently only firefox browsers support this, maybe it will be part of standard in future
+	scrollbar-width: none;
+	// @media (max-width: 600px) {
+	// 	height: 300px;
+	// }
+}
+
+// this is not part of general standard between all web-browsers, only webkit as chrome and safari
+.nav-mobile-links-container::-webkit-scrollbar {
+	display: none;
 }
 
 .nav-mobile-menu-icon {
@@ -84,6 +93,7 @@
 	border-width: 1px;
 	animation: slide-nav-mobile_width-in 0.6s ease-out 0s forwards;
 }
+
 .nav-mobile-collapsed {
 	animation: slide-nav-mobile_width-out 0.6s ease-out 0s forwards;
 	border-width: 0px;

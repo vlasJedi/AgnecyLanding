@@ -49,7 +49,7 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   ngAfterViewInit() {
     // this updates happens in the moment of initial detect changes cycle,
-    // so if we update some bindings we need schedule/ask to run once again cycle
+    // so if we update some bindings we need schedule/ask to run once again change detection
     // so consumers of the binding can see it in correct way
     this.isChildViewsInit = true;
     this.changeRef.detectChanges();
