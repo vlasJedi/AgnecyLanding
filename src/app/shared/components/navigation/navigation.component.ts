@@ -2,7 +2,6 @@ import { Component, OnInit, ChangeDetectorRef, OnDestroy, ElementRef, AfterViewI
 import { INavItem } from 'shared/models/nav-item.model';
 import { fromEvent, Subscription } from 'rxjs';
 import { throttleTime } from 'rxjs/operators';
-import { IWrapOverflowed } from 'shared/directives/overflowed.directive';
 
 
 @Component({
@@ -61,7 +60,7 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   // wrap passed callback to the defined interface method
   onClick(event: MouseEvent, navItem: INavItem) {
-    if (this.onClickCall == null) return;
+    if (this.onClickCall == null) return false;
     return this.onClickCall(event, navItem);
   }
 

@@ -6,6 +6,8 @@ import { HomeModule } from './home/home.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+document.body.addEventListener("beforeunload", (event) => console.log("**** Page is unloaded"));
+
 @NgModule({
   // what this modules owns and creates comps, pipes and directives (except services)
   declarations: [
