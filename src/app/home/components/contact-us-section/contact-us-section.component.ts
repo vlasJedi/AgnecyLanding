@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BackdropService } from 'core/services/backdrop-service/backdrop.service';
 
 @Component({
   selector: 'contact-us-section',
@@ -7,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(private backdropService: BackdropService) { }
 
   ngOnInit(): void {
   }
 
   onClick() {
+    this.backdropService.activateBackdrop();
     alert("Contacts");
+    this.backdropService.disableBackdrop();
   }
 
 }

@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "agnecylanding"
+  "defaultProject": "agnecylanding",
+  "cli": {
+    "analytics": "e12bbbe3-fdce-47ef-93da-8ee9d8af6f4a"
+  }
 }
