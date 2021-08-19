@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+// the best way to push events to several subscribers so acts as observable-broadcaster
+import { Subject } from 'rxjs';
 
 @Injectable({
   // this is root injector, so provider will give only singleton of the service
@@ -7,26 +8,30 @@ import { Observable } from 'rxjs';
 })
 export class BackdropService {
 
-  private isBackdropActive: Boolean = false;
-  private observable: Observable<Boolean> | null = null;
-  // need more precise type
-  private subscriber: Object | null = null;
+  private static readonly NOT_INTERACT = "not-interactive";
+  private isBackdropActive: boolean = false;
+  private eventEmitter: Subject<boolean> = new Subject();
 
   constructor() { }
 
   activateBackdrop() {
-    if (!this.getIsBackdropActive()) this.isBackdropActive = true;
+    this.updateBackdrop(true);
   }
 
   disableBackdrop() {
-    if (this.getIsBackdropActive()) this.isBackdropActive = false;
+    this.updateBackdrop(false);
   }
 
-  getIsBackdropActive(): Boolean {
+  private updateBackdrop(isActive: boolean): void {
+    this.isBackdropActive = isActive;
+    this.eventEmitter.next(this.isBackdropActive);
+  } 
+
+  getIsBackdropActive(): boolean {
     return this.isBackdropActive;
   }
 
-  getObservable() {
-    if (!this.observable) this.observable = new Observable(subscriber => {});
+  getEventEmitter(): Subject<boolean> {
+    return this.eventEmitter;
   }
 }

@@ -15,6 +15,7 @@ document.body.addEventListener("beforeunload", (event) => console.log("**** Page
   ],
   // Other modules whose exported classes are needed by component templates declared in this NgModule
   // imports recursiverely comps from specified modules
+  // all these providers will be merged to root injector
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,12 +24,14 @@ document.body.addEventListener("beforeunload", (event) => console.log("**** Page
   // exports - whate comps, dirs and pipes other module can use
 
   // Creators of services that this NgModule contributes to the global collection of services; 
-  // they become accessible in all parts of the app
+  // they become accessible in all parts of the app as part of root injector
 
   // providedIn property - we have the new provideIn property for specifying where the dependencies can be provided.
   // It's officialy named Tree-shakable providers. Thanks to the providedIn property the service can 
   // specify where it can be provided without resorting to use the providers array of the module/component.
-  // ervices can be provided in the root or in any of the available modules using any or a specific module. 
+  // services can be provided in the root or in any of the available modules using any or a specific module.
+  // NOTE: If component will try import such service most probably there will be circular dependency
+  // component > service > module > component 
   // The root value is an alias for the AppModule, any is added starting with Angular 9
   providers: [],
   // The main application view, called the root component, which hosts all other app views. 
