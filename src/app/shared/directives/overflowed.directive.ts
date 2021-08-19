@@ -1,6 +1,5 @@
 import { Directive, ElementRef, Output, Input, EventEmitter, OnDestroy, ChangeDetectorRef, AfterViewInit } from '@angular/core';
 import { Subscription, fromEvent } from 'rxjs';
-import { throttleTime } from 'rxjs/operators';
 
 @Directive({
   selector: '[wrapOverflowed]'
