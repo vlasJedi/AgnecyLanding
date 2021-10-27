@@ -31,7 +31,7 @@ module.exports = (env, argv) => {
         devServer: {
             open: {
                 // opens specified application with port
-                app: ["chrome", "--remote-debugging-port=9222"]
+                app: ["chromium", "--remote-debugging-port=9222"]
             },
             contentBase: './dist',
             hot: true,

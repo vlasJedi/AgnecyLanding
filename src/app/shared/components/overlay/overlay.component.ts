@@ -17,10 +17,10 @@ export class OverlayComponent implements OnInit, OnDestroy {
 
   constructor(private changeDetector: ChangeDetectorRef, private backdropService: BackdropService) { 
     this.eventEmitter = backdropService.getEventEmitter();
-    this.eventEmitter.subscribe((isActive: boolean) => {
-      this.isVisible = isActive;
-      this.changeDetector.detectChanges();
-    });
+    //this.eventEmitter.subscribe((isActive: boolean) => {
+    //  this.isVisible = isActive;
+    //  this.changeDetector.detectChanges();
+    //});
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.eventEmitter?.unsubscribe();
+    //this.eventEmitter?.unsubscribe();
   }
 
   getVisible(): boolean {

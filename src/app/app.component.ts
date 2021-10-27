@@ -15,7 +15,7 @@ export class AppComponent implements OnDestroy {
 
   constructor(private appRef: ApplicationRef, private backdropService: BackdropService) {
     this.eventEmitter = backdropService.getEventEmitter();
-    this.eventEmitter.subscribe((isActive: boolean) => this.isInteractive = !isActive);
+    //this.eventEmitter.subscribe((isActive: boolean) => this.isInteractive = !isActive);
   }
   getStyle() {
     return {
@@ -24,6 +24,6 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    this.eventEmitter?.unsubscribe();
+    //this.eventEmitter?.unsubscribe();
   }
 }

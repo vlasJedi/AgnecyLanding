@@ -41,7 +41,7 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnDestroy(): void {
-    this.resizeSubscription?.unsubscribe();
+    //this.resizeSubscription?.unsubscribe();
   }
 
   ngAfterViewInit() {

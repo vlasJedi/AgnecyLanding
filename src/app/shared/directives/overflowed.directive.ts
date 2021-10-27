@@ -20,11 +20,11 @@ export class OverflowedDirective implements OnDestroy {
 
   constructor() {
     // add appropriate throttle
-    this.windowResizeSubscription = fromEvent(window, "resize").pipe().subscribe(this.tryEmitEvent.bind(this));
+    //this.windowResizeSubscription = fromEvent(window, "resize").pipe().subscribe(this.tryEmitEvent.bind(this));
   }
 
   ngOnDestroy() {
-    this.windowResizeSubscription?.unsubscribe();
+    //this.windowResizeSubscription?.unsubscribe();
   }
 
   private tryEmitEvent() {
