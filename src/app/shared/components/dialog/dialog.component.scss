@@ -1,0 +1,13 @@
+@import "shared/styles/definitions.scss";
+
+.dialog {
+    z-index: $appDialogZIndex;
+    position: fixed;
+    display: inline;
+    background-color: white;
+    width: 400px;
+    height: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

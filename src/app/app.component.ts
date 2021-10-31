@@ -1,6 +1,6 @@
 import { Component, ChangeDetectorRef, ChangeDetectionStrategy, ApplicationRef, OnDestroy } from '@angular/core';
 import { BackdropService } from 'core/services/backdrop-service/backdrop.service';
-import { Subject } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -10,13 +10,21 @@ import { Subject } from 'rxjs';
 })
 export class AppComponent implements OnDestroy {
   title = 'agnecylanding';
-  private eventEmitter: Subject<boolean> | null = null;
+  private subBackDrop: Subscription | null = null;
   private isInteractive: boolean = true;
 
-  constructor(private appRef: ApplicationRef, private backdropService: BackdropService) {
-    this.eventEmitter = backdropService.getEventEmitter();
-    //this.eventEmitter.subscribe((isActive: boolean) => this.isInteractive = !isActive);
+  constructor(
+    private appRef: ApplicationRef, 
+    private backdropService: BackdropService,
+    private changeDet: ChangeDetectorRef
+    ) {
+      const eventEmitter = backdropService.getEventEmitter();
+      this.subBackDrop = eventEmitter.subscribe((isActive: boolean) => {
+        this.isInteractive = !isActive;
+        this.changeDet.detectChanges();
+    });
   }
+
   getStyle() {
     return {
       "not-interactive": !this.isInteractive
@@ -24,6 +32,6 @@ export class AppComponent implements OnDestroy {
   }
 
   ngOnDestroy() {
-    //this.eventEmitter?.unsubscribe();
+    this.subBackDrop?.unsubscribe();
   }
 }

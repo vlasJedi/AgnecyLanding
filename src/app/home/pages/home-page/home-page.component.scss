@@ -1,4 +1,4 @@
-@import 'shared/styles/main.scss';
+@import 'shared/styles/definitions.scss';
 
 @keyframes shadowText {
 	0% {text-shadow:5px 0px 10px rgba(0,0,0,.5)}
@@ -272,7 +272,7 @@
 }
 
 .header-navigation-container {
-	z-index: 2;
+	z-index: $headerNavContainerZIndex;
 	position: fixed;
 	width: 100%;
 	margin-bottom: 80px;
@@ -740,7 +740,7 @@
 	position:fixed;
 	bottom:0;
 	left:0;
-	z-index:5;
+	z-index: $footerZIndex;
 	width:100%;
 	opacity:.9;
 	@media (max-width:870px) {

@@ -10,7 +10,7 @@ import { throttleTime } from 'rxjs/operators';
   styleUrls: ['./navigation.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
+export class NavigationComponent implements OnInit, AfterViewInit {
   
   @ViewChild("targetWrapOverflowed") targetToCheckWrap: ElementRef | null = null;
 
@@ -20,9 +20,6 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   private mobileNavEnabled: boolean = false
   private isMobileNavMenuOpened: boolean = false
-
-  private resizeSubscription: Subscription | null = null
-
   public isChildViewsInit: boolean = false;
   
   // no bindings at the moment populated
@@ -40,10 +37,6 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnInit(): void {
   }
 
-  ngOnDestroy(): void {
-    //this.resizeSubscription?.unsubscribe();
-  }
-
   ngAfterViewInit() {
     // this updates happens in the moment of initial detect changes cycle,
     // so if we update some bindings we need schedule/ask to run once again change detection
@@ -59,7 +52,8 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
   // wrap passed callback to the defined interface method
   onClick(event: MouseEvent, navItem: INavItem) {
     if (this.onClickCall == null) return false;
-    return this.onClickCall(event, navItem);
+    this.onClickCall(event, navItem);
+    return false;
   }
 
   isMobileNavMenuNotCollapsed(): boolean {
@@ -68,6 +62,7 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   toggleMobileNavMenu() {
     this.isMobileNavMenuOpened = !this.isMobileNavMenuNotCollapsed();
+    this.changeRef.detectChanges();
   }
 
   getMobileNavLinkStyle() {
@@ -91,11 +86,13 @@ export class NavigationComponent implements OnInit, OnDestroy, AfterViewInit {
 
   onItemsHorizontallyWrapped() {
     this.mobileNavEnabled = true;
+    this.changeRef.detectChanges();
   }
 
   onItemsHorizontallyUnWrapped() {
     this.isMobileNavMenuOpened = false;
     this.mobileNavEnabled = false;
+    this.changeRef.detectChanges();
   }
 
   getTargetForWrapCheck() {

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, ChangeDetectionStrategy, ChangeDetectorRef, Input } from '@angular/core';
 import { BackdropService } from 'core/services/backdrop-service/backdrop.service';
-import { Subject } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'overlay',
@@ -10,17 +10,17 @@ import { Subject } from 'rxjs';
 })
 export class OverlayComponent implements OnInit, OnDestroy {
 
-  private eventEmitter: Subject<boolean> | null = null;
+  private subscription: Subscription | null = null;
   private isVisible: boolean = false;
-  @Input()
-  test: string | null = null;
 
   constructor(private changeDetector: ChangeDetectorRef, private backdropService: BackdropService) { 
-    this.eventEmitter = backdropService.getEventEmitter();
-    //this.eventEmitter.subscribe((isActive: boolean) => {
-    //  this.isVisible = isActive;
-    //  this.changeDetector.detectChanges();
-    //});
+    // this is just ref to observable
+    const eventEmitter = backdropService.getEventEmitter();
+    // get subscription object to unsub in case of destroy
+    this.subscription = eventEmitter.subscribe((isActive: boolean) => {
+      this.isVisible = isActive;
+      this.changeDetector.detectChanges();
+    });
   }
 
   ngOnInit(): void {
@@ -28,7 +28,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    //this.eventEmitter?.unsubscribe();
+    this.subscription?.unsubscribe();
   }
 
   getVisible(): boolean {

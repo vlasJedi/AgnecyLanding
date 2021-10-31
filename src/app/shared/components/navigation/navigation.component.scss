@@ -1,4 +1,4 @@
-@import "shared/styles/main.scss";
+@import "shared/styles/definitions.scss";
 
 .nav-container {
 	//position: absolute;
@@ -40,22 +40,21 @@
 
 .nav-mobile-icons-container {
 	position: absolute;
-	z-index: 5;
+	z-index: $navMobileZIndex + 1;
+	top: 10px;
+	left: 10px;
 }
 
 
 .nav-mobile-links-container {
 	position: absolute;
-	z-index: 4;
+	z-index: $navMobileZIndex;
 	list-style-type: none;
 	padding-left: 0;
 	height: 100vh;
 	overflow: auto;
 	// currently only firefox browsers support this, maybe it will be part of standard in future
 	scrollbar-width: none;
-	// @media (max-width: 600px) {
-	// 	height: 300px;
-	// }
 }
 
 // this is not part of general standard between all web-browsers, only webkit as chrome and safari
@@ -132,8 +131,6 @@
 	width: 100%;
 	text-transform: uppercase;
 	border-bottom: 2px solid transparent;
-	&:active {
-	}
 }
 
 .nav-mobile-link-text-container {
