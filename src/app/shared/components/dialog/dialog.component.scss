@@ -5,9 +5,56 @@
     position: fixed;
     display: inline;
     background-color: white;
+	border-radius:7px;
     width: 400px;
-    height: 600px;
+    height: 500px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.dialog-controls-container {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.dialog-ok-button {
+    display: inline-block;
+    width: 100px;
+	height: 40px;
+	animation: none;
+    background:$ButtonText;
+	color:green;
+	border-radius:7px;
+	border:2px solid green;
+	&:hover {
+		background-color:#ffefef;
+		transition: background-color 0.3s ease-out;
+	}
+	&:active {
+		border-size:4px;
+		background-color:$ButtonText;
+	}
+}
+
+.dialog-cancel-button {
+    display: inline-block;
+    width: 100px;
+	height: 40px;
+	animation: none;
+    background:$ButtonText;
+	color:$ButtonBack;
+	border-radius:7px;
+	border:2px solid $ButtonBack;
+	&:hover {
+		background-color:#ffefef;
+		transition: background-color 0.3s ease-out;
+	}
+	&:active {
+		border-size:4px;
+		background-color:$ButtonText;
+	}
 }

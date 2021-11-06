@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { IDialogNotificator, IDialogState } from 'core/services/dialog-service/dialog.service';
+
 
 @Component({
   selector: 'app-dialog',
@@ -7,18 +9,21 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit } 
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogComponent implements OnInit {
-  private _className: string = "dialog";
+  private stateObject: IDialogState = {
+    className: "dialog",
+    isHidden: true
+  };
 
   @Input()
   set className(val: string) {
-    this._className = val;
+    this.stateObject.className = val;
   }
 
   get className(): string {
-    return this._className;
+    return this.stateObject.className;
   }
 
-  constructor(private changeDet: ChangeDetectorRef) { 
+  constructor(private changeDet: ChangeDetectorRef, private dialogNotificator: IDialogNotificator) { 
     
   }
 
@@ -26,7 +31,8 @@ export class DialogComponent implements OnInit {
   }
 
   getIsHidden(): boolean {
-    return false;
+    return this.stateObject.isHidden;
   }
 
 }
+

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from 'shared/shared.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
