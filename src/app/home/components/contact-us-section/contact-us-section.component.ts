@@ -1,6 +1,6 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { BackdropService } from 'core/services/backdrop-service/backdrop.service';
-
+import { Component, ChangeDetectionStrategy, Inject } from '@angular/core';
+import { IDialogService } from 'core/services/dialog-service/dialog.service';
+import { TDialogService } from 'app.module';
 @Component({
   selector: 'contact-us-section',
   templateUrl: './contact-us-section.component.html',
@@ -9,11 +9,12 @@ import { BackdropService } from 'core/services/backdrop-service/backdrop.service
 })
 export class ContactUsSectionComponent {
 
-  constructor(private backdropService: BackdropService) { }
+  constructor(@Inject(TDialogService) private readonly dialogService: IDialogService) { }
 
   onClick() {
-    this.backdropService.activateBackdrop();
-    setTimeout(() => this.backdropService.disableBackdrop(), 5000);
+    //this.backdropService.activateBackdrop();
+    this.dialogService.show();
+    setTimeout(() => this.dialogService.hide(), 5000);
   }
 
 }
