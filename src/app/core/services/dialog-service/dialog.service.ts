@@ -3,12 +3,15 @@ import { Subject } from 'rxjs';
 import { BackdropService } from '../backdrop-service/backdrop.service';
 
 export interface IDialogNotificator {
-  getUpdater(): Subject<IDialogState>
+  getUpdater(): Subject<IDialogContext>
 }
 
-export interface IDialogState {
+export interface IDialogContext {
+  header?: string
   className?: string,
   isHidden?: boolean,
+  onCancelBtnClick?: () => void,
+  onOkBtnClick?: () => void
 }
 
 export interface IDialogService {
@@ -25,18 +28,24 @@ export interface IDialogService {
   providedIn: 'root'
 })
 export class DialogService implements IDialogNotificator, IDialogService {
-  private readonly updater: Subject<IDialogState> = new Subject();
+  private readonly updater: Subject<IDialogContext> = new Subject();
   private isDialogVisible = false;
 
   constructor(private backdropService: BackdropService) { }
 
-  getUpdater(): Subject<IDialogState> {
+  getUpdater(): Subject<IDialogContext> {
       return this.updater;
   }
 
   show() {
     this.isDialogVisible = true;
-    this.updater.next({isHidden: false});
+    const that = this;
+    this.updater.next({
+      header: "Contact Us Form",
+      isHidden: false,
+      onCancelBtnClick: () => that.onCancelBtnClick(),
+      onOkBtnClick: () => that.onCancelBtnClick()
+    });
     this.backdropService.activateBackdrop();
   }
 
@@ -44,5 +53,13 @@ export class DialogService implements IDialogNotificator, IDialogService {
     this.isDialogVisible = true;
     this.updater.next({isHidden: true});
     this.backdropService.disableBackdrop();
+  }
+
+  onCancelBtnClick() {
+    this.hide();
+  }
+
+  onOkBtnClick() {
+    this.hide();
   }
 }

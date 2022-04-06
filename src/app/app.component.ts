@@ -34,4 +34,16 @@ export class AppComponent implements OnDestroy {
   ngOnDestroy() {
     this.subBackDrop?.unsubscribe();
   }
+
+  onMouseWheel(event: Event) {
+    if (!this.isInteractive) event.preventDefault();
+  }
+
+  onKey(event: KeyboardEvent) {
+    if ((event.code === "ArrowUp" || event.code === "ArrowDown") && !this.isInteractive) event.preventDefault();
+  }
+
+  onTouchMove(event: TouchEvent) {
+    if (!this.isInteractive) event.preventDefault();
+  }
 }

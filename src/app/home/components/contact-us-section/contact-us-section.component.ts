@@ -12,9 +12,7 @@ export class ContactUsSectionComponent {
   constructor(@Inject(TDialogService) private readonly dialogService: IDialogService) { }
 
   onClick() {
-    //this.backdropService.activateBackdrop();
     this.dialogService.show();
-    setTimeout(() => this.dialogService.hide(), 5000);
   }
 
 }

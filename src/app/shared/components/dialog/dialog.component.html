@@ -1,6 +1,9 @@
 <div [ngClass]="className" [hidden]="getIsHidden()">
+    <div>
+        <div></div>
+    </div>
     <div class="dialog-controls-container">
-        <button class="button dialog-ok-button">OK</button>
-        <button class="button dialog-cancel-button">Cancel</button>
+        <button class="button dialog-ok-button" (click)="onOkBtnClick()">OK</button>
+        <button class="button dialog-cancel-button" (click)="onCancelBtnClick()">Cancel</button>
     </div>
 </div>

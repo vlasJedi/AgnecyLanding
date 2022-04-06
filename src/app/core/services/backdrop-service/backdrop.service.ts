@@ -34,4 +34,5 @@ export class BackdropService {
   getEventEmitter(): Subject<boolean> {
     return this.eventEmitter;
   }
+  
 }

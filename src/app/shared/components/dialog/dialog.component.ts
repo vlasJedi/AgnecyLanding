@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, 
   Input, OnInit, Inject } from '@angular/core';
 
-import { IDialogNotificator, IDialogState } from 'core/services/dialog-service/dialog.service';
+import { IDialogNotificator, IDialogContext } from 'core/services/dialog-service/dialog.service';
 import { TDialogNotificator } from 'app.module';
 import { Subscription } from 'rxjs';
 
@@ -12,9 +12,9 @@ import { Subscription } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DialogComponent implements OnInit {
-  private static readonly DEFAUL_CLASS_NAME = "dialog";
-  private stateObject: IDialogState = {
-    className: DialogComponent.DEFAUL_CLASS_NAME,
+  private static readonly DEFAULT_CLASS_NAME = "dialog";
+  private stateObject: IDialogContext = {
+    className: DialogComponent.DEFAULT_CLASS_NAME,
     isHidden: true
   };
   private subscription: Subscription | undefined; 
@@ -25,7 +25,7 @@ export class DialogComponent implements OnInit {
   }
 
   get className(): string {
-    return this.stateObject.className || DialogComponent.DEFAUL_CLASS_NAME;
+    return this.stateObject.className || DialogComponent.DEFAULT_CLASS_NAME;
   }
 
   constructor(
@@ -43,6 +43,14 @@ export class DialogComponent implements OnInit {
 
   getIsHidden(): boolean | undefined {
     return this.stateObject.isHidden;
+  }
+
+  onOkBtnClick() {
+    this.stateObject.onOkBtnClick?.();
+  }
+
+  onCancelBtnClick() {
+    this.stateObject.onCancelBtnClick?.();
   }
 
 }

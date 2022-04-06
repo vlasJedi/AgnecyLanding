@@ -15,12 +15,12 @@ $ContactInfoHeader: #d7d7d7;
 
 // Z indexes for important UI elements
 
-$parallaxZIndex: 2;
-$headerNavContainerZIndex: 2;
-$headerWrapperZIndex: 4;
+$parallaxZIndex: 4;
+$headerNavContainerZIndex: 4;
+$headerWrapperZIndex: 5;
 // uses index and index + 1 
-$navMobileZIndex: 4;
-$footerZIndex: 5;
+$navMobileZIndex: 5;
+$footerZIndex: 2;
 $overlayZIndex: 6;
 $appDialogZIndex: 7;
 

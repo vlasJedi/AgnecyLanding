@@ -1,3 +1,8 @@
 
 <!-- this is placeholder for angular router content placing -->
-<div [ngClass]="getStyle()"><router-outlet></router-outlet></div>
+<div [ngClass]="getStyle()" 
+  (mousewheel)="onMouseWheel($event)" 
+  (DOMMouseScroll)="onMouseWheel($event)"
+  (keyup)="onKey($event)"
+  (keydown)="onKey($event)"
+  (touchmove)="onTouchMove($event)"><router-outlet></router-outlet></div>

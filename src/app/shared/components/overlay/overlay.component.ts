@@ -32,6 +32,7 @@ export class OverlayComponent implements OnInit, OnDestroy {
   }
 
   getVisible(): boolean {
-      return this.isVisible;
+    return this.isVisible;
   }
+
 }
